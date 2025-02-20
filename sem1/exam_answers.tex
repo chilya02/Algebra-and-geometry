@@ -1,0 +1,1964 @@
+\documentclass[12pt, fleqn]{article}
+% Эта строка — комментарий, она не будет показана в выходном файле
+\usepackage{cmap}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[english, russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage[makeroom]{cancel}
+\usepackage{enumerate}
+
+\usepackage{tikz}
+%\DeclareMathSizes{10}{10}{10}{10}
+\title{Ответы АиГ}
+\date{26.12.2024}
+\author{Черепанов Илья}
+
+
+\begin{document}
+	\maketitle
+	\clearpage
+	\tableofcontents{}
+	\clearpage
+\section{Множества и операции над ними.}
+\subsection*{Определение множества.}
+\textbf{\textit{Множество}} -- совокупность объектов, объединенных по какому-то признаку.
+\\
+Объекты, из которых состоит множество, нахываются его \textbf{\textit{элементами}}.
+\\
+Множества принято обозначать заглавными буквами латинского алфавита $\{A,B,\dots ,X,Y,\dots \}$, а их элементы -- малыми буквами $\{a,b,\dots ,x,y,\dots \}$.
+\\
+Множество, не содержащее ни одного элемента, называется \textbf{\textit{пустым}}, обозначается символом $\varnothing$.
+\\
+Множество $A$ называется \textbf{\textit{подмножеством}} множества $B$, если каждый элемент множества $A$ является элементом множества $B$. Обозначается $A \subset B$.
+\\
+Говорят, что множества $A$ и $B$ \textbf{\textit{равны}} или \textbf{\textit{совападают}}, и пишут $A=B$, если $A \subset B$ и $B \subset A$. То есть, если множества состоят из одних и тех же элементов.
+\\
+\textbf{\textit{Объединением}} (или суммой) множеств A и B называется множество, состоящие из элементов, принадлежащих хотя бы одному их этих множеств. Обозначается $A \cup B$ (или$A+B$). Кратко можно записать $A\cup B = \{x\colon x\in A$ или $x \in B\}$
+\\
+\textbf{\textit{Пересечением}} (или произведением) множеств $A$ и $B$ называется множество, состоящее из элементов, каждый из которых принадлежит множеству $A$ и множеству $B$. Обозначают $A \cap B$ (или$A \cdot B$). Кратко можно записать $A\cap B = \{x\colon x\in A$ и $x \in B\}$
+\subsection*{Числовые множества. Множества на прямой.}
+Множества, элементами которых явлвяются числа, называются \textbf{\textit{числовыми}}.\\
+Примеры числовых множеств: \\
+$\mathbb{N} = \{1; 2; 3; \dots ; n; \dots \}$ - множество натуральных чисел.\\
+$\mathbb{Z} = \{\pm1; \pm2; \pm3; \dots ; \pm n; \dots \}$ - множество целых чисел.\\
+$\mathbb{Q} = \{\frac m n\colon  m \in \mathbb{Z}, n \in \mathbb{N} \}$ - множество рациональных чисел.\\
+$\mathbb{R}$ -- множество вещественных чисел.\\
+Между этими множествами существует соотношение: \\
+$\mathbb{N \in Z \in Q \in R}$\\
+Действительные числа, не являющиеся рациональными, нызываются \textit{иррациональными}.\\\\
+Свойства $\mathbb{R}$:
+\begin{enumerate}
+	\item Множество \textit{упорядоченное}:  для любых двух различных чисел a и b справедливо $a < b$ или $a > b$
+	\item Множество \textit{плотное}:  между двумя раличными числами $a$ и $b$ содержится бесконечное множество действительных чисел.
+	\item Множество \textit{непрерывное}. Пусть множество $\mathbb{R}$ разбито на два непустых класса $A$ и $B$ таких, что каждое действительное число содержится только в одном классе и для каждой пары чисел $a \in A$ и $b \in B$ выполнено неравенство $a<b$. Тогда существует единственное число $c$, удовлетворяющее неравенству $a \leq c \leq b  (\forall a \in A, \forall b \in B)$. Оно отделяет числа класса $A$ от чисел класса $B$. Число $c$ является либо наибольшим числом в классе $A$ (тогда в классе $B$ нет наименьшего числа), либо наименьшим числом в классе $B$ (тогда в класе $A$ нет наибольшего).
+\end{enumerate}
+Свойство непрерывности позволяет установить взаимно-однозначное соответствие между множеством всех действительных чисел и множеством всех точек прямой. Это означает, что каждому числу $x \in \mathbb{R}$ соответствует единственная точка числовой оси и наоборот.\\\\
+Пусть $a, b \in \mathbb{R}, a < b$\\
+\textit{Числовыми промежутками} (интервалами) называют подмножества всех действительных чисел, имеющих следующий вид: 
+\begin{description}
+	\item $[a;b]=\{x\colon  a \leq x \leq b\}$ -- отрезок;
+	\item $(a;b)=\{x\colon  a < x < b\}$ -- интервал;
+	\item $[a;b)=\{x\colon a \leq x < b\}$;
+	\item $(a;b]=\{x\colon a < x \leq b\}$ -- полуоткрытые интервалы (или полуоткрытые отрезки);
+	\item $(-\infty;b]=\{x\colon x\leq b\}$;
+	\item $(-\infty;b)=\{x\colon x<b\}$;
+	\item $[a;\infty)=\{x\colon  x\geq a\}$;
+	\item $(a;\infty)=\{x\colon  x> a\}$;
+	\item $(-\infty;\infty)=\{x\colon  -\infty < x < \infty\} = \mathbb{R}$ -- бесконечные интервалы (промежутки);
+\end{description}
+\section{Плоскость комплексных чисел.}
+$\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}\subseteq\mathbb{C}$\\
+Пусть $\alpha, \beta, \gamma, \dots $ -- точки плоскости.\\
+$\alpha = (a, b)$\\
+$\beta=(b,c)$\\
+$a, b, c, d \in \mathbb{R}$\\
+Операции:
+\begin{enumerate}
+	\item{Сложение}\\
+	$\alpha + \beta = (a+c, b+ d)$
+	\item{Умножение}\\
+	$\alpha \cdot\beta = (ac-bd, bc+ad)$
+	\item{Вычитание}\\
+	Пусть $(x, y)$ -- разность\\
+	$(c, d) + (x, y) = (a, b)$\\
+	$(c+x, d+y)=(a, b)$
+	\begin{equation*}
+		\begin{cases}
+			c+x=a\\
+			d+y=b
+		\end{cases}
+		\begin{cases}
+			x=a-c\\
+			y=b-d
+		\end{cases}
+	\end{equation*}
+	\begin{equation*}
+		\alpha - \beta = \alpha + (-\beta)=(a-c, b-d)\\
+	\end{equation*}
+	\item{Деление}\\
+	 Пусть $\frac\alpha\beta = (x, y)$\\
+	$(x, y)\cdot(c, d)=(a, b)$\\
+	$(cx-dy, cy+dx) = (a, b)$\\
+	\begin{equation*}
+		\begin{cases}
+			cx-dy=a\\
+			dx+cy=b
+		\end{cases}
+		\begin{cases}
+			x=\frac{ac+bd}{c^2+d^2}\\
+			y=\frac{bc-ad}{c^2+d^2}
+		\end{cases}
+	\end{equation*}
+	\begin{equation*}
+		\frac{\alpha}{\beta}=\left(\frac{ac+bd}{c^2+d^2}, \frac{bc-ad}{c^2+d^2}\right)
+	\end{equation*}
+	Построенная плоскость, с введенными на ней операциями называется \textit{\textbf{комлпексной плоскостью}}. т.к. точки вида $(a, 0)$являются точками вещественной оси, они являются аналогом $\mathbb{R}$.\\
+	$Ox$ -- вещественная (действительная) ось\\
+	$Oy$ -- мнимая ось\\
+\end{enumerate}
+\section{Комплексные числа в алгебраической форме. Действия над ними.}
+$\alpha = a+bi$ -- алгебраическая форма записи $\alpha$.\\
+$a$ -- действительная часть числа $\alpha$\\
+$b$ -- мнимая часть числа $\alpha$\\
+$i$ -- мнимая единица $i^2=-1$\\
+Пусть $\alpha = a+bi, \beta=c+di$\\
+Операции над ними:
+\begin{itemize}
+	\item $\alpha+\beta=a+c+(b+d)i$
+	\item $\alpha-\beta= a-c+(b-d)i$
+	\item $\alpha \cdot\beta=(a+bi)\cdot(c+di)=ac+adi+bci-bdi^2=ac-bd+(ad+bc)i$
+	\item $\frac{\alpha}{\beta}=\frac{a+bi}{c+di}=\frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{ac+bd+(bc-ad)i}{c^2+d^2}=\frac{ac+bd}{c^2+d^2}+\frac{(bc-ad)i}{c^2+d^2}$
+\end{itemize}
+\section{Геометрическая интерпретация операций над комплексными числами. Свойства модуля.}
+\subsection*{Геометрический смысл }
+Пусть
+	\begin{align*}
+	\alpha = (a, b)= a+bi\\
+	\beta = (c, d) = c+di
+\end{align*}
+\begin{tikzpicture}
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	
+	\draw [dashed, blue] (0,1)--(2,1);
+	\draw [dashed, blue] (2,0)--(2,1);
+	\draw [dashed, red] (0,3)--(1,3);
+	\draw [dashed, red] (1,0)--(1,3);
+	\draw [line width=2pt](2,0.1)--(2,-0.1) node [anchor=north]{\textbf{a}};
+	\draw [line width=2pt] (1,0.1)--(1,-0.1) node [anchor=north]{\textbf{c}};
+	\draw [line width=2pt] (0.1,1)--(-0.1,1) node [anchor=east]{\textbf{b}};
+	\draw [line width=2pt] (0.1,3)--(-0.1,3) node [anchor=east]{\textbf{d}};
+	
+	\draw[line width=2pt,blue,-stealth](0,0)--(2,1) node[anchor=south west]{$\boldsymbol{\alpha}$};
+	\draw[line width=2pt,red,-stealth](0,0)--(1, 3) node[anchor=north east]{$\boldsymbol{\beta}$};
+\end{tikzpicture}
+\begin{itemize}
+	\item Сложение $\alpha+\beta$\\
+	\begin{tikzpicture}
+		\draw[->] (-1,0)--(5,0) node[right]{$x$};
+		\draw[->] (0,-1)--(0,5) node[above]{$y$};
+		
+		\draw [dashed, blue] (0,1)--(2,1);
+		\draw [dashed, blue] (2,0)--(2,1);
+		\draw [dashed, red] (0,3)--(1,3);
+		\draw [dashed, red] (1,0)--(1,3);
+		\draw [dashed] (3,0)--(3,4);
+		\draw [dashed] (0,4)--(3,4);
+		
+		\draw [line width=2pt](2,0.1)--(2,-0.1) node 	[anchor=north]{\textbf{a}};
+		\draw [line width=2pt] (1,0.1)--(1,-0.1) node [anchor=north]{\textbf{c}};
+		\draw [line width=2pt] (0.1,1)--(-0.1,1) node 
+		[anchor=east]{\textbf{b}};
+		\draw [line width=2pt] (0.1,3)--(-0.1,3) node [anchor=east]{\textbf{d}};
+		\draw [line width=2pt] (0.1,4)--(-0.1,4) node [anchor=east]{\textbf{b+d}};
+		\draw [line width=2pt] (3,0.1)--(3,-0.1) node [anchor=north]{\textbf{a+c}};
+		
+		\draw[line width=2pt,blue,-stealth](0,0)--(2,1) node[anchor=south west]{$\boldsymbol{\alpha}$};
+		\draw[line width=2pt,red,-stealth](0,0)--(1, 3) node[anchor=north east]{$\boldsymbol{\beta}$};
+		\draw[thin,red,-stealth](2,1)--(3, 4);
+		\draw[thin,blue,-stealth](1,3)--(3, 4);
+		\draw[line width=2pt, -stealth](0,0)--(3,4) node[anchor=south west]{$\boldsymbol{\alpha+\beta}$};
+	\end{tikzpicture}
+	\item Вычитание $\alpha - \beta$\\
+	\begin{tikzpicture}
+		\draw[->] (-3,0)--(5,0) node[right]{$x$};
+		\draw[->] (0,-3)--(0,5) node[above]{$y$};
+		\draw[line width=2pt,blue,-stealth](0,0)--(2,1) node[anchor=south west]{$\boldsymbol{\alpha}$};
+		\draw[line width=2pt,red,-stealth](0,0)--(1, 3) node[anchor=north east]{$\boldsymbol{\beta}$};
+		\draw[line width=2pt,red,-stealth](0,0)--(-1, -3) node[anchor=south east]{$\boldsymbol{-\beta}$};
+		\draw[thin,red,-stealth](2,1)--(1, -2);
+		\draw[thin,blue,-stealth](-1,-3)--(1, -2);
+		\draw[line width=2pt, -stealth](0,0)--(1,-2) node[anchor=north west]{$\boldsymbol{\alpha-\beta}$};	
+	\end{tikzpicture}
+\end{itemize}
+\subsection*{Свойства модуля}
+Пусть $\alpha=a+bi$\\
+\begin{tikzpicture}
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	
+	\draw [dashed, blue] (0,4)--(4,4);
+	\draw [dashed, blue] (4,0)--(4,4);
+	\draw [line width=2pt](4,0.1)--(4,-0.1) node [anchor=north]{\textbf{a}};
+	\draw [line width=2pt] (0.1,4)--(-0.1,4) node [anchor=east]{\textbf{b}};
+	
+	
+	\draw[line width=2pt,blue,-stealth](0,0) --(2,2) node[anchor=south]{$\boldsymbol{r}$} --(4,4) node[anchor=south west]{$\boldsymbol{\alpha}$};
+	\draw (1,0) arc (0:45:1);
+	\draw (1.2,0.5) node{$\boldsymbol{\varphi}$};
+\end{tikzpicture}\\
+$(r, \varphi)$ -- полярные координаты\\
+\begin{flalign*}
+	&r^2=a^2+b^2&\\
+	&r \cos{\varphi} = a&\\
+	&r \sin{\varphi} = b&\\
+	&\tg{\varphi}=\frac{a}{b}&\\
+	&r=|\alpha| \text{ -- \textbf{\textit{модуль}} }\alpha &&| \alpha \in \mathbb{C}&&&&&&&&&&\\
+	&\varphi \text{ -- \textbf{\textit{аргумент}} }\alpha &&|\alpha \in \mathbb{C}&&&&&&&&&&\\
+	&Arg  \alpha = \arg \alpha + 2 \pi k&&|k \in \mathbb{Z}&&&&&&&&&&\\
+	&\varphi=\arg\alpha
+	\begin{cases}
+		\arctg \frac b a, &\alpha \in I, IV\\
+		\arctg \frac b a + \pi, & \alpha \in II\\
+		\arctg \frac b a - \pi, & \alpha \in III\\
+	\end{cases}\\
+	&\varphi \in [0;2\pi)
+\end{flalign*}
+\textit{\textbf{Свойства}}:
+\begin{itemize}
+	\item $|\alpha|-|\beta| \leq|\alpha\pm\beta|\leq|\alpha+\beta|$
+	\item $|\alpha|\cdot|\beta| = |\alpha\cdot\beta|$
+	\item $\left|\frac{\alpha}{\beta}\right|=\frac{|\alpha|}{|\beta|} $
+\end{itemize}
+\section{Сопряженные числа и их свойства.}
+$\alpha=a+bi$\\
+$\overline{\alpha}=a-bi$ -- сопряженное число к $\alpha$\\\\
+Свойства сопряженных чисел:
+\begin{enumerate}
+	\item $\alpha+\overline{\alpha}=2a\in\mathbb{R}$
+	\item $\alpha \cdot\overline{\alpha}=a^2+b^2\in\mathbb{R}$
+	\item $\overline{\alpha+\beta}=\overline{\alpha}+\overline{\beta}$\\
+	\textit{Доказательство:}
+	\begin{align*}
+	&\alpha = a+bi&\\
+	&\beta = c+di&\\
+	&\alpha + \beta = (a+c) + (b+d)i&\\
+	&\overline{\alpha+\beta}=(a+c)-(b+d)i=a-bi+c-di=\overline{\alpha}+\overline{\beta}&\\
+	\blacksquare
+	\end{align*}
+	\item$\overline{\alpha\cdot\beta}=\overline{\alpha}\cdot\overline{\beta}$\\
+	\textit{Доказательство:}
+	\begin{align*}
+		&\alpha\cdot\beta=(ac-bd)+(ad+bc)i&\\
+		&\overline{\alpha\cdot\beta}=ac-bd-(ad+bc)i&\\
+		&\overline{\alpha}\cdot\overline{\beta}=(a-bi)(c-di)=ac-bd-(ad+bc)i&\\
+		&\Downarrow&\\
+		&\overline{\alpha\cdot\beta}=\overline{\alpha}\cdot\overline{\beta}&\\
+		\blacksquare
+	\end{align*}
+	\item $\overline{\alpha-\beta}=\overline{\alpha}-\overline{\beta}$
+	\item $\overline{\left(\frac\alpha\beta\right)} =\frac{\overline{\alpha}}{\overline{\beta}}$
+\end{enumerate}
+
+\section{Тригонометрическая форма комплексного числа. Умножение и деление комплексных чисел в тригонометрической форме.}
+\subsection*{Тригонометрическая форма записи.}
+Пусть $\alpha=a+bi$\\
+\begin{tikzpicture}
+	\draw[->] (-1,0)--(5,0) node[right]{$x$};
+	\draw[->] (0,-1)--(0,5) node[above]{$y$};
+	
+	\draw [dashed, blue] (0,4)--(4,4);
+	\draw [dashed, blue] (4,0)--(4,4);
+	\draw [line width=2pt](4,0.1)--(4,-0.1) node [anchor=north]{\textbf{a}};
+	\draw [line width=2pt] (0.1,4)--(-0.1,4) node [anchor=east]{\textbf{b}};
+	
+	
+	\draw[line width=2pt,blue,-stealth](0,0) --(2,2) node[anchor=south]{$\boldsymbol{r}$} --(4,4) node[anchor=south west]{$\boldsymbol{\alpha}$};
+	\draw (1,0) arc (0:45:1);
+	\draw (1.2,0.5) node{$\boldsymbol{\varphi}$};
+\end{tikzpicture}\\
+$(r, \varphi)$ -- полярные координаты\\
+\begin{flalign*}
+	&r^2=a^2+b^2&\\
+	&r \cos{\varphi} = a&\\
+	&r \sin{\varphi} = b&\\
+	&\tg{\varphi}=\frac{a}{b}&\\
+	&r=|\alpha| \text{ -- модуль }\alpha &| \alpha \in \mathbb{C}&&&&&&&&&&\\
+	&\varphi \text{ -- аргумент }\alpha &|\alpha \in \mathbb{C}&&&&&&&&&&\\
+	&Arg  \alpha = \arg \alpha + 2 \pi k&|k \in \mathbb{Z}&&&&&&&&&&\\
+	&\varphi=\arg\alpha
+	\begin{cases}
+		\arctg \frac b a, &\alpha \in I, IV\\
+		\arctg \frac b a + \pi, & \alpha \in II\\
+		\arctg \frac b a - \pi, & \alpha \in III\\
+	\end{cases}\\
+	&\varphi \in [0;2\pi)&\\
+	& |0|=0&\\
+	& \varphi=\arg 0 \text{ -- не определен}&\\
+\end{flalign*}
+	$$\boxed{r(\cos\varphi+i\sin\varphi)\text{ -- \textbf{\textit{тригонометрическая форма}} записи }\alpha}$$
+\subsection*{Умножение}
+	
+	\begin{align*}
+		\text{Пусть }&\\
+		\alpha&=|\alpha|(\cos\varphi_1+i\sin\varphi_1)&\\
+		\beta&=|\beta|(\cos\varphi_2+i\sin\varphi_2)&\\
+		\text{тогда}&\\
+		\alpha\cdot\beta&=|\alpha|\cdot|\beta|((\cos\varphi_1\cdot\cos\varphi_2-\sin\varphi_1\cdot\sin\varphi_2)+i(\sin\varphi_1\cdot\cos\varphi_2+\cos\varphi_1\cdot\sin\varphi_2))=\\
+		&=|\alpha|\cdot|\beta|(\cos{(\varphi_1+\varphi_2)}+i\sin{(\varphi_1+\varphi_2)})&\\
+		\text{то есть}&\\
+		\alpha\cdot\beta &= |\alpha|\cdot|\beta|(\cos{(\varphi_1+\varphi_2)}+i\sin{(\varphi_1+\varphi_2)})&\\
+	\end{align*}
+\subsection*{Деление}
+	\begin{flalign*}
+		\text{Пусть }&\\ 
+		\alpha&=|\alpha|(\cos\varphi_1+i\sin\varphi_1)&\\
+		\beta&=|\beta|(\cos\varphi_2+i\sin\varphi_2)&\\
+		\text{тогда}&\\
+		\frac\alpha\beta&=\frac{|\alpha|(\cos{\varphi_1}+i\sin{\varphi_1})}{|\beta|(\cos{\varphi_2}+i\sin{\varphi_2})}=&\\
+		&=\frac{|\alpha|}{|\beta|} \frac{(\cos{\varphi_1}+i\sin{\varphi_1})(\cos\varphi_2-i\sin\varphi_2)}{(\cos{\varphi_2}+i\sin{\varphi_2})(\cos\varphi_2-i\sin\varphi_2)}=&\\
+		&=\frac{|\alpha|}{|\beta|} \frac{\cos\varphi_1\cdot\cos\varphi_2+\sin\varphi_1\cdot\sin\varphi_2+i\left(\sin\varphi_1\cdot\cos\varphi_2-\cos\varphi_1\cdot\sin\varphi_2\right)}{\cos^2{\varphi_1}+\sin^2{\varphi_2}}=&\\
+		&=\frac{|\alpha|}{|\beta|}\left(\cos{(\varphi_1-\varphi_2)}+i\sin{(\varphi_1-\varphi_2)}\right)&\\
+		\text{то есть}&\\
+		\frac\alpha\beta&=\frac{|\alpha|}{|\beta|}\left(\cos{(\varphi_1-\varphi_2)}+i\sin{(\varphi_1-\varphi_2)}\right)&
+	\end{flalign*}
+	
+\section{Формула Муавра. Формулы для синуса и косинуса кратного угла.}
+$\alpha^n=r^n\left(\cos{n\varphi+i\sin{n\varphi}}\right)$ -- формула Муавра.
+\begin{align*}
+	&\alpha=r(\cos\varphi+i\sin\varphi)\\
+	&\alpha^n=r^n(\cos{n\varphi}+i\sin{n\varphi})=r^n(\cos{\varphi}+i\sin{\varphi})^n\\
+	&\Downarrow\\
+	&\cos{n\varphi}+i\sin{n\varphi}=\underbrace{\left(\cos\varphi+i\sin\varphi\right)^n}\\
+	&\text{\textit{\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space\space Бином Ньютона}}
+\end{align*}
+\begin{equation*}
+	\begin{cases}
+		\cos{n\varphi} \text{ -- действительная часть полинома } (\cos\varphi+i\sin\varphi)^n\\
+		\sin{n\varphi} \text{ -- мнимая часть полинома } (\cos\varphi+i\sin\varphi)^n\\
+	\end{cases}
+\end{equation*}
+\section{Извлечение квадратного корня и корня n-й степени из комплексного числа.}
+\subsection*{Квадратный корень}
+Пусть\\
+$\alpha=a+bi$
+\begin{align*}
+	&\sqrt{\alpha} = \sqrt{a+bi}=x+yi\\
+	&a+bi=x^2+2xyi-y^2\\
+	&\begin{cases}
+		a=x^2-y^2&|^2\\
+		b=2xy&|^2\\
+	\end{cases}\\
+	&\begin{aligned}
+		\left(x^2+y^2\right)^2+4x^2y^2&=a^2+b^2\\
+		&\Updownarrow\\
+		\left(x^2+y^2\right)^2&=a^2+b^2\\
+	\end{aligned}\\
+	&x^2+y^2=\sqrt{a^2+b^2}\\
+	&x^2=\frac{1}{2}\left(a+\sqrt{a^2+b^2}\right)\\
+	&y^2=\frac{1}{2}\left(-a+\sqrt{a^2+b^2}\right)
+\end{align*}
+\subsection*{Корень n-ой степени}
+Пусть\\
+$\alpha=r\left(\cos\varphi+i\sin\varphi\right)$
+\begin{align*}
+	&\sqrt[n]{\alpha}=\sqrt[n]{r\left(\cos\varphi+i\sin\varphi\right)}=R(\cos\psi+i\sin\psi)\\
+	&R=\sqrt[n]{r}\\
+	&r\left(\cos\varphi+i\sin\varphi\right)=R^n(\cos{n\psi}+i\sin{n\psi})\\
+	&\begin{aligned}
+		&n\psi=\varphi+2\pi k, &k\in \mathbb{Z}\\
+		&\psi=\frac{\varphi+2\pi k}{n}, &k=0,1,2,\dots ,n-1\\
+	\end{aligned}
+\end{align*}
+\boxed{\sqrt[n]{r\left(\cos\varphi+i\sin\varphi\right)}=\sqrt[n]{r}\left(\cos{\frac{\varphi+2\pi k}{n}}+i\sin{\frac{\varphi+2\pi k}{n}}\right), k=0,1,\dots ,n-1}
+\section{Извлечение корня n-й степени из единицы.}
+\begin{align*}
+	1&=\cos0+i\sin0\\
+	\sqrt[n]{1} &= \cos{\frac{2\pi k}{n}} + i \sin{\frac{2\pi k}{n}}, k=0,1,\dots ,n-1\\
+	\sqrt{1} &= \pm1\\
+	\sqrt[4]{1}&=\left\{\pm1\cup\pm i\right\}=\left\{1+i, 1-i, -1+i,-1-i\right\}\\
+	\sqrt[3]{1}&=\cos{\frac{2\pi k}{3}} + i \sin{\frac{2\pi k}{3}}, k=0,1,2,3\\\\
+	&\begin{aligned}
+		&k=0\colon&\cos0 + i \sin0 & = 1\\
+		&k=1\colon&\cos{\frac{2\pi}{3}} + i \sin{\frac{2\pi}{3}} & =-\frac{1}{2}+i\frac{\sqrt{3}}{2}\\
+		&k=2\colon&\cos{\frac{4\pi}{3}} + i \sin{\frac{4\pi}{3}} & =-\frac{1}{2}-i\frac{\sqrt{3}}{2}\\
+	\end{aligned}
+\end{align*}
+\subsection*{Свойства}
+\begin{enumerate}
+	\item Все значения $\sqrt[n]{\alpha}, \alpha \in \mathbb{C}$ можно получить умножением одного из этих значений на все корни $n$-ой степени из 1.
+	\item Произведение двух корней $n$-ой степени из 1 само есть корень $n$-ой степени из 1.
+	\item Число, обратное корню $n$-ой степени из 1 само есть такой же корень.
+	\item Всякая степень корня $n$-ой степени из 1 есть такой же корень $n$-ой степени из 1.
+	\item Всякий корень $k$-ой степени из 1 будет также корнем $l$-ой степени из 1 для всякого $l$ кратного $k$.
+\end{enumerate}
+\section{Показательная форма комплексного числа. Действия над комплексными числами в показательной форме.}
+\subsection*{Формула Эйлера}
+\boxed{e^{i\varphi}=\cos\varphi+i\sin\varphi}
+\subsection*{Показательная форма записи}
+\begin{align*}
+	&\alpha=r\left(\cos\varphi+i\sin\varphi\right)\\
+	&\alpha=re^{i\varphi}
+\end{align*}
+\subsection*{Умножение}
+\begin{align*}
+	&\alpha=re^{i\varphi}\\
+	&\beta=r^\prime e^{i\varphi^\prime}\\
+	&\alpha\cdot\beta=re^{i\varphi}\cdot r^\prime e^{i\varphi^\prime}=rr^\prime e^{i\left(\varphi+\varphi^\prime\right)}\\
+\end{align*}
+\subsection*{Деление}
+\begin{align*}
+	&\alpha=re^{i\varphi}\\
+	&\beta=r^\prime e^{i\varphi^\prime}\\
+	&\frac{\alpha}{\beta}=\frac{re^{i\varphi}}{r^\prime e^{i\varphi^\prime}}= \frac{r}{r^\prime} e^{i\left(\varphi-\varphi^\prime\right)}\\
+\end{align*}
+\section{Операции над многочленами и их свойства.}
+\subsection*{Многочлены}
+\textit{\textbf{Многочлен}} -- сумма целых неотрицательных степеней неизвестного числа x, взятых с некоторыми коэффициентами.\\
+Выражение вида $f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots +a_1x+a_0$ называется \textit{\textbf{полиномом (многочленом)}} n-ой степени от неизвестного x.\\
+$\deg f(x)=n$ -- степень многочлена.\\
+Многочленами \textit{нулевой} степени являются отличные от 0 комплексные числа.\\
+Число 0 также будет многочленом, степень которого неопределена.\\
+\textit{\textbf{Два многочлена}} $f(x)$ и  $g(x)$ \textit{\textbf{равны}}, если равны коэффициенты при одинаковых степенях неизвестного.
+\subsection*{Операции}
+Пусть
+\begin{flalign*}
+	&f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots +a_1x+a_0, &a_n\neq0&&&&&&\\
+	&g(x)=b_sx^s+b_{s-1}x^{s-1}+\dots +b_1x+b_0, &b_s\neq0&&&&&&
+\end{flalign*}
+\begin{itemize}
+	\item $f(x)+ g(x)=c_nx^n+c_{n-1}x^{n-1}+\dots +c_1x+c_0$, \\
+		где $c_i=a_i+b_i$, $i=0, 1, \dots , n$, причем при $n > s$, коэффициенты $b_{s+1}, b_{s+2},\dots ,b_n$ считаем равными 0.\\
+		\textit{Свойства}:
+			\begin{enumerate}
+				\item $f(x)+g(x) = g(x)+ f(x)$
+				\item $\left[f(x)+g(x)\right]  +h(x) = f(x)+\left[g(x)+h(x)\right] $
+			\end{enumerate}
+	\item $-f(x)=-a_nx^n-a_{n-1}x^{n-1}-\dots -a_1x-a_0$\\
+	\item $f(x)\cdot g(x)=d_{n+s}x^{n+s}+d_{n+s-1}x^{n+s-1}+\dots +d_1x+d_0$, \\
+		где $ d_i =\sum_{k+l=i} a_kb_l$, $i=0, 1, \dots , n+s-1, n+s$\\
+		\textit{Свойства}:
+		\begin{enumerate}
+			\item $f(x)\cdot g(x) = g(x)\cdot f(x)$
+			\item $\left[f(x)\cdot g(x)\right] \cdot h(x) = f(x)\cdot \left[g(x)\cdot h(x)\right] $
+		\end{enumerate}
+	\item роль единицы в умножении играет число 1.
+	\item $f(x)$ обладает обратным многочленом $f^{-1}(x)$, таким что $f(x)\cdot f^{-1}(x) = 1$, если $f(x)$ является многочленом 0 степени.
+\end{itemize}
+\section{Деление многочленов с остатком.}
+$\forall f(x), g(x) \exists! q(x), r(x)\colon$ \\
+$f(x)=g(x)\cdot q(x) + r(x)$\\
+Причем $\deg r(x) < \deg g(x)$ или $\deg r(x) = 0$.\\
+$q(x)$ -- частное от деления $f(x)$ на $g(x)$.\\
+$r(x)$ --  остаток от деления.\\
+\textit{Доказательство:}\\
+\begin{enumerate}
+	\item $\exists$
+	\begin{multline*}
+		f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots +a_1x+a_0\\
+		g(x)=b_sx^s+b_{s-1}x^{s-1}+\dots +b_1x+b_0\\
+	\end{multline*}
+	\begin{enumerate}
+		\item $s>n \Rightarrow q(x)=0, r(x)=f(x)$\\
+		$\deg r(x) < \deg g(x)$
+		\item $s\leq n$
+		\begin{flalign*}
+			&f_1(x) = f(x)-\frac{a_n}{b_s}x^{n-s}\cdot g(x), &&\deg f_1(x)=n_1<n&\\
+			n_1\geq s\colon&f_2(x) = f_1(x)-\frac{a_{n_1}}{b_s}x^{n_1-s}\cdot g(x), &&\deg f_2(x)=n_2<n_1&\\
+			n_2\geq s\colon&f_3(x) = f_2(x)-\frac{a_{n_2}}{b_s}x^{n_2-s}\cdot g(x), &&\deg f_3(x)=n_3<n_2&\\
+			&\dots &\\
+			n_{k-1}\geq n_{k-2}\colon &f_k(x)=f_{k-1}(x)-\frac{a_{n_{k-1}-s}}{b_s}\cdot g(x),&&\deg f_k(x)=n_k<n_{k-1}
+		\end{flalign*}
+		Сложим $f_1(x), f_2(x)\dots ,f_{k-1}(x)$:
+		\begin{multline*}
+			f(x)-\left(\frac{a_n}{b_s}x^{n-s} + \frac{a_{n_1}}{b_s}x^{n_1-s}+ \frac{a_{n_2}}{b_s}x^{n_2-s}+\dots +\frac{a_{n_{k-1}-s}}{b_s}\right)\cdot g(x)=f_k(x)\\
+			q(x) = \frac{a_n}{b_s}x^{n-s} + \frac{a_{n_1}}{b_s}x^{n_1-s}+ \frac{a_{n_2}}{b_s}x^{n_2-s}+\dots +\frac{a_{n_{k-1}-s}}{b_s}\\
+			r(x) = f_k(x)\\
+		\end{multline*}
+	\end{enumerate}
+	\item $\exists!$ - Однозначность доказываем от обратного.\\
+	Пусть $\exists \overline{q}(x), \overline{r}(x)\colon$
+	\begin{align}
+		f(x) = g(x)\cdot q(x)+r(x) \label{true}\\
+		f(x) = g(x)\cdot \overline{q}(x)+\overline{r}(x) \label{false}
+	\end{align}
+	Из (\ref{true}) вычтем (\ref{false}):
+	\begin{multline*}
+		g(x)\cdot\left(\overline{q}(x)-q(x)\right) = r(x) - \overline{r}(x)\\
+		\begin{cases}
+			\overline{q}(x) - q(x) = 0 \\
+			\overline{r}(x) - r(x) = 0\\
+		\end{cases}\\
+		\blacksquare\\
+	\end{multline*}
+\subsection*{Следствие}
+Если $f(x)$ или $g(x)$ -- многочлены с $\mathbb{R}$ коэффициентами, то коэффициенты многочленов $f_1(x), f_2(x), \dots ,f_k(x), g(x)$, а значит и $q(x), r(x)$ -- так же $\mathbb{R}$.
+\end{enumerate}
+\section{Теорема о делителе многочлена. Свойства делимости многочлена.}
+Пусть даны $f(x), g(x)$ с $\mathbb{C}$ коэффициентами.\\
+Если остаток от деления $f(x)$ на $g(x)$ равен нулю, то говорят, что $f(x)$ \textbf{\textit{нацело делится}} на $g(x)$ и $g(x)$ -- \textbf{\textit{делитель }}$f(x)$.
+$$f(x) \vdots g(x)\Leftrightarrow \exists h(x)\colon f(x)=h(x)\cdot g(x)$$
+\textit{Доказательство:}
+\begin{multline*}
+	f(x) = g(x)\cdot q(x)+r(x)\\
+	r(x)=0\\
+	q(x) = h(x)\\
+	f(x) = g(x)\cdot h(x)\\
+	\blacksquare\\
+\end{multline*}
+\textit{Замечание}:\\
+если $g(x)$ -- делитель многочлена $f(x)$, то и $q(x)$ -- делитель.
+\subsection*{Свойства делимости}
+\begin{enumerate}
+	\item Если $f(x)\vdots g(x)$, а $g(x) \vdots h(x)$, то $f(x) \vdots h(x)$.\\
+	\textit{Доказательство:}
+	\begin{multline*}
+		f(x)\vdots g(x) \Rightarrow f(x) = g(x)\cdot \varphi(x)\\
+		g(x) \vdots h(x) \Rightarrow g(x) = h(x)\cdot \psi(x)\\
+		f(x) = \left[h(x)\cdot\psi(x)\right]\cdot\varphi(x)=h(x)\cdot\left[\psi(x)\cdot(\varphi(x))\right]\\
+		\Downarrow\\
+		f(x)\vdots h(x)\\
+		\blacksquare\\
+	\end{multline*}
+	\item Если $f(x)\vdots\varphi(x)$ и $g(x)\vdots\varphi(x)$, то их сумма и разность так же делится на $\varphi(x)$\\
+		\textit{Доказательство:}
+		\begin{multline*}
+			f(x)\vdots \varphi(x) \Rightarrow f(x) = \varphi(x)\cdot\psi_1(x)\\
+			g(x) \vdots \varphi(x) \Rightarrow g(x) = \varphi(x)\cdot \psi_2(x)\\
+			f(x)\pm g(x) = \varphi(x)\cdot\psi_1(x) \pm \varphi(x)\cdot\psi_2(x)=\varphi(x)\pm\left[\psi_1(x)\pm\psi_2(x)\right]\\
+			\Downarrow\\
+			f(x)\pm g(x)\vdots \varphi(x)\\
+			\blacksquare\\
+		\end{multline*}
+	\item Если $f(x)\vdots\varphi(x)$, то $f(x)\cdot g(x)$ так же делится на $\varphi(x)$\\
+	\textit{Доказательство:}
+	\begin{multline*}
+		f(x)\vdots \varphi(x) \Rightarrow f(x) = \varphi(x)\cdot\psi(x)\\
+		f(x)\cdot g(x) = \left[\varphi(x)\cdot\psi(x)\right]\cdot g(x)=\varphi(x)\left[\cdot\psi(x)\cdot g(x)\right]\\
+		\Downarrow\\
+		f(x)\cdot g(x)\vdots \varphi(x)\\
+		\blacksquare\\
+	\end{multline*}
+	\item Если каждый $f_1(x), f_2(x),\dots ,f_k(x)$ делится на $\varphi(x)$, то на $ \varphi(x)$ будет делиться и многочлен $f_1(x)g_1(x)+f_2(x)g_2(x)+\dots +f_k(x)g_k(x)$, где $g_1(x), g_2(x), \dots ,g_k(x)$ -- произвольные многочлены.\\
+	\textit{Доказательство:}\\
+	Следует из 2 и 3 свойств.
+	\item Всякий многочлен $f(x)$ делится на любой многочлен нулевой степени.\\
+	\textit{Доказательство:}
+	\begin{multline*}
+		c = const \text{ (многочлен нулевой степени)}\\
+		f(x)= c\left(c^{-1}f(x)\right)\Rightarrow f(x) \vdots c\\
+		\blacksquare\\
+	\end{multline*}
+	\item Если $f(x)\vdots \varphi(x)$, то $f(x)\vdots c\cdot\varphi(x)$, где $c$ -- произвольное число, отличное от 0.\\
+	\textit{Доказательство:}
+	\begin{multline*}
+		f(x) = \varphi(x) \cdot\psi(x)\\
+		f(x)  = c\varphi(x)\left[c^{-1}\psi(x)\right]\\
+		\blacksquare\\
+	\end{multline*}
+	\item Многочлены $cf(x), c\neq0$ и только они будут делителями многочлена $f(x)$, имеющими такую же степень, что и $f(x)$\\
+	\textit{Доказательство:}
+	\begin{multline*}
+		f(x) = cf(x)\cdot c^{-1}, c\neq 0\\
+		\exists \varphi(x), \deg \varphi(x) = \deg f(x)\\
+		f(x)\vdots \varphi(x)\\
+		\Downarrow\\
+		f(x) = \varphi(x)\cdot\psi(x)\\
+		\Downarrow\\
+		\deg\psi(x) = 0\\
+		\psi(x) = c \Rightarrow f(x) \vdots cf(x)\\
+		\blacksquare\\
+	\end{multline*}
+	\item $f(x)\vdots g(x)$ и $g(x)\vdots f(x) \Leftrightarrow f(x)=cg(x), c\neq0$\\
+	\textit{Доказательство:}\\
+	Следует из свойства 7.\\
+	 \item Всякий делитель одного из двух многочленов $f(x), cf(x), c\neq0$, будет делителем и для другого многочлена.\\
+	 \textit{Доказательство:}\\
+	 Следует из свойств 8 и 1.
+\end{enumerate}
+\section{Наибольший общий делитель. Алгоритм Евклида.}
+Многочлен $\varphi(x)$ будет называться \textit{\textbf{общим делителем}} для $f(x)$ и $g(x)$, если $f(x)\vdots\varphi(x), g(x) \vdots\varphi(x)$\\
+\textit{Замечание:}\\
+К числу общих делителей $f(x), g(x)$ принадлежат все многочлены нулевой степени.\\
+\textit{\textbf{Наибольшим общим делителем}} отличных от 0 многочленов $f(x)$ и $g(x)$ называется такой многочлен $d(x)$, который является их общим делителем и, вместе с тем, сам делится на любой другой их общий делитель.
+\subsection*{Алгоритм Евклида}
+\begin{flalign*}
+	&\deg f(x) \geq \deg g(x)\\
+	&f(x) = g(x)\cdot q_1(x)+r_1(x), &&\deg r_1(x)<\deg g(x)&\\
+	&g(x) = r_1(x)\cdot q_2(x)+r_2(x), &&\deg r_2(x)<\deg r_1(x)&\\
+	&\dots \\
+	&r_{k-3}(x)=r_{k-2}(x)\cdot q_{k-1}(x)+r_{k-1}(x), &&\deg r_{k-1}(x)<\deg r_{k-2}(x)&\\
+	&r_{k-2}(x)=r_{k-1}(x)\cdot q_{k}(x)+r_{k}(x), &&\deg r_{k}(x)<\deg r_{k-1}(x)&\\
+	&r_{k-1}=r_k(x)\cdot q_{k+1}(x)&\\
+	&r_k(x) \text{ -- НОД}
+\end{flalign*}
+\section{Теорема о линейном представлении наибольшего общего делителя. Следствия из нее.}
+Если $d(x)$ -- НОД $f(x), g(x)$, то можно найти такие многочлены $u(x), v(x)$, что:
+\begin{multline*}
+	f(x)\cdot u(x)+g(x)\cdot v(x) = d(x)\\
+	\deg f(x) \neq 0; \deg g(x)\neq 0\\
+	\deg u(x) < \deg f(x)\\
+	\deg v(x) < \deg g(x)\\
+\end{multline*}
+\textit{Следствие:}\\
+$f(x)$ и $g(x)$ -- взаимно простые $\Leftrightarrow \exists u(x), v(x)\colon f(x)u(x)+g(x)v(x)=1$
+\subsection*{Свойства взаимно простых многочленов} 
+\begin{enumerate}
+	\item Если многочлен $f(x)$ взаимно прост с каждым из $\varphi(x), \psi(x)$, то он взаимно прост с их произведением.
+	\item Если $f(x)\cdot g(x) \vdots \varphi(x)$, но $\varphi(x)$ и $f(x)$ -- взаимно простые, то $g(x) \vdots\varphi(x)$
+	\item Если $f(x)\vdots\varphi(x)$ и $f(x)\vdots\psi(x)$, которые между собой взаимно простые, то $f(x)\vdots\varphi(x)\cdot\psi(x)$
+\end{enumerate}
+\section{Теорема Безу и следствия из нее.}
+\subsection*{Теорема Безу}
+Остаток от деления $f(x)$ на линейный многочлен $x-c$ равен значению $f(c)$ многочлена $f(x)$ при $x=c$\\
+\textit{Доказательство:}\\
+\begin{multline*}
+	f(x) = (x-c)\cdot q(x)+r(x)\\
+	\deg r(x)=0
+	f(c) = (c-c)\cdot q(c)+r \Rightarrow \boxed{r=f(c)}\\
+	\blacksquare\\
+\end{multline*}
+\textit{Следствие:}\\
+$c$ -- корень $f(x) \Leftrightarrow f(x)\vdots(x-c)$\\
+Таким образом найти корень многочлена $\Leftrightarrow$ найти его линейный делитель
+$$f(x)\vdots(ax+b)\Rightarrow f(x)\vdots\left(x-\left(-\frac{a}{b}\right)\right)$$
+\section{Схема Горнера.}
+Пусть 
+\begin{multline*}
+	f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots +a_1x+a_0\\
+	f(x)=(x-c)q(x)+r\\
+	\text{где}\colon\\
+	\begin{aligned}
+		q(x) &= b_{n-1}x^{n-1}+b_{n-2}x^{n-2}+\dots +b_1x+b_0\\
+		b_{n}&=a_n\\
+		b_{n-1}&=cb_{n}+a_{n-1}\\
+		b_{n-2}&=cb_{n-1}+a_{n-2}\\
+		\dots \\
+		b_1&=cb_2+a_1\\
+		b_0&=cb_1+a_0\\
+		r&=b_0\\
+	\end{aligned}\\
+\end{multline*}
+\begin{tabular}{ c| c | c | c | c| c | c} 
+	\hline
+	$f(x)$ & $a_n$ & $a_{n-1}$ & $a_{n-2}$ & $\dots $& $a_1$ & $a_0$\\
+	\hline
+	$c$ & $b_n$ & $b_{n-1}$ & $b_{n-2}$& $\dots $& $b_1$ & $b_0$\\
+	\hline
+\end{tabular}
+\subsection*{Кратные корни}
+Если $f(x)=\left(x-c\right)^k\cdot\varphi(x)$, где многочлен $\varphi(x)\bcancel\vdots c$, то число $k$ называется \textit{\textbf{кратностью корня}} $c$ в многочлене $f(x)$, а сам корень $c$ -- $k$-кратным корнем (или корнем кратности $k$). Если $k=1$, то говорят, что корень $c$ -- простой.
+\section{Основная теорема высшей алгебры. Следствия из нее.}
+\subsection*{Основная теорема алгебры}
+Всякий многочлен с любыми числовыми коэффициентами, степень которого не меньше 1, имеет хотя бы один корень ( в общем случае комплексный).\\
+$\forall f(x), \deg f(x) > 1: \exists c\in \mathbb{C} \colon f(c)=0$\\
+\textit{Следствие 1:}\\
+Любой многочлен n-ой степени можно разложить единственным образом в произведение n линейных множителей
+$$f(x) = a_n\cdot\left(x-\alpha_1\right)\cdot\left(x-\alpha_2\right)\cdot\dots \cdot\left(x-\alpha_n\right)$$
+\textit{Доказательство:}
+\begin{align*}
+	&\begin{aligned}
+		&f(x) &&|\deg f(x)=n\\
+		&\alpha_1 \text{ -- корень }f(x)&\\
+		&\Downarrow\\
+		&f(x)=\left(x-\alpha_1\right)g_1(x)&& |\deg g_1(x) = n-1&\\
+		&\alpha_2 \text{ -- корень }g_1(x)&\\
+		&\Downarrow\\
+		&g_1(x)=\left(x-\alpha_2\right)g_2(x)&& |\deg g_2(x) = n-2&\\
+	\end{aligned}\\
+	&\Downarrow\\
+	&\dots \\
+	&\Downarrow\\
+	&f(x)=a_n\left(x-\alpha_1\right)\left(x-\alpha_2\right)\dots \left(x-\alpha_n\right)&\\
+	&f(x)=a_n\left(x-\beta_1\right)\left(x-\beta_2\right)\dots \left(x-\beta_n\right)&\\
+	&\Downarrow\\
+	&\left(x-\alpha_1\right)\left(x-\alpha_2\right)\dots \left(x-\alpha_n\right)=\left(x-\beta_1\right)\left(x-\beta_2\right)\dots \left(x-\beta_n\right)&\\
+	&\alpha_1\neq\beta_j, \forall j = 1,2,\dots ,n\\
+	&x=\alpha_1 \Rightarrow 0 = c \neq 0 \text{-- противоречие}\\
+	&\blacksquare\\
+\end{align*}
+\textit{Следствие 2:}\\
+Если многочлены $f(x)$ и $g(x)$, $\deg f(x) \leq n, \deg g(x) \leq n$, имеют равные значения более чем при $n$ различных значениях неизвестного, то $f(x) = g(x)$\\
+\textit{Доказательство:}
+\begin{multline*}
+	f(x)-g(x), \deg \left(f(x) - g(x)\right) \leq n\\
+	\text{при } x=c_1, c_2, c_3, \dots , c_n, c_{n+1}, \dots \\
+	f(c_i) = g(c_i) \forall i\\
+	c_1, c_2, \dots  \text{ -- корни }\Rightarrow f(x)-g(x)=0\\
+	f(x) = g(x)\\
+	\blacksquare\\
+\end{multline*}
+\textit{Следствие 3:}\\
+Если $\alpha \in \mathbb{C}$ -- корень $f(x)$ с $\mathbb{R}$ коэффициентами, то корнем $f(x)$ будет и $\overline{\alpha}$.\\
+\textit{Доказательство:}
+\begin{multline*}
+	f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots +a_1x+a_0\\
+	\alpha \text{ -- корень }f(x)\\
+	a_n\alpha^n+a_{n-1}\alpha^{n-1}+\dots +a_1\alpha+a_0 = 0\\
+	a_n\overline{\alpha}^n+a_{n-1}\overline{\alpha}^{n-1}+\dots +a_1\overline{\alpha}+a_0 = 0\\
+	\Downarrow\\
+	\overline{\alpha} \text{ -- корень }f(x)\\
+	\blacksquare\\
+\end{multline*}
+\textit{Следствие 4:}\\
+Всякий многочлен $f(x)$ с $\mathbb{R}$ коэффициентами можно представить в виде произведения линейных двучленов и квадратных трехчленов (для $D < 0$), соответствующих парам сопряженных $\mathbb{C}$ корней.\\
+\textit{Следствие 5:}\\
+Многочлен нечетной степени с $\mathbb{R}$ коэффициентами всегда имеет хотя бы один $\mathbb{R}$ корень.
+\section{Интерполяционная формула Лагранжа. Формулы Виета.}
+$$f(x)=\sum_{i=1}^{n+1}\frac{c_i\left(x-a_1\right)\dots \left(x-a_{i-1}\right)\left(x-a{i+1}\right)\dots \left(x-a_{n+1}\right)}{\left(a_i-a_1\right)\dots \left(a_i-a_{i-1}\right)\left(a_i-a_{i+1}\right)\dots \left(a_i-a_{n+1}\right)}$$
+\begin{multline*}
+	f(x) = x^n+a_{n-1}x^{n-1}+\dots +a_2x^2+a_1x+a_0\\
+	\alpha_1, \alpha_2, \dots , \alpha_n \text{ -- корни }f(x)\\
+	f(x)=\left(x-\alpha_1\right)\left(x-\alpha_2\right)\dots \left(x-\alpha_n\right)\\
+	a_{n-1}=-\left(\alpha_1+\alpha_2+\dots +\alpha_n\right)\\
+	a_{n-2}=\alpha_1\alpha_2+\alpha_1\alpha_3+\dots +\alpha_1\alpha_n+\alpha_2\alpha_3+\dots +\alpha_{n-1}\alpha_n\\
+	a_{n-3}=-\left(\alpha_1\alpha_2\alpha_3+\alpha_1\alpha_2\alpha_4+\dots +\alpha_{n-2}\alpha_{n-1}\alpha_n\right)\\
+	a_1=\left(-1\right)^{n-1}\left(\alpha_1\alpha_2\dots \alpha_{n-1}+\alpha_1\alpha_2\dots \alpha_{n-2}\alpha_n+\dots +\alpha_2\alpha_3\dots \alpha_n\right)\\
+	a_0=\left(-1\right)^n\alpha_1\alpha_2\alpha_3\dots \alpha_n\\
+\end{multline*}
+Для $n=2$ \textit{(Формулы Виета):}
+\begin{multline*}
+	a_1=\left(\alpha_1+\alpha_2\right)\\
+	a_0=\alpha_1\alpha_2\\
+\end{multline*}
+Для $n=3$:
+\begin{multline*}
+	a_2=-\left(\alpha_1+\alpha_2+\alpha_3\right)\\
+	a_1=\alpha_1\alpha_2+\alpha_1\alpha_3+\alpha_2\alpha_3\\
+	a_0=-\alpha_1\alpha_2\alpha_3\\
+\end{multline*}
+\section{Теорема о несократимых дробях. Теорема о неправильной дроби.}
+\textbf{\textit{Рациональной дробью}} или дробно-рациональной функцией называют частное $\frac{f(x)}{g(x)}$ двух целых рациональных функций, где $g(x) \neq 0$\\
+Рациональная дробь называется \textbf{\textit{несократимой}}, если её числитель взаимно прост со знаменателем.
+\subsection*{Теорема о несократимых дробях}
+Всякая рациональная дробь равна некоторой несократимой дроби, определенной однозначно с точностью до множителя нулевой степени, общего для числителя и знаменателя. 
+$$\frac{f(x)}{g(x)}=\frac{h(x)\cdot\varphi(x)}{h(x)\cdot\psi(x)}=\frac{\varphi(x)}{\psi(x)}$$
+\textit{Доказательство:}
+\begin{multline*}
+	\left(f(x), g(x)\right) = h(x) \text{ -- НОД } f(x), g(x)\\
+	\frac{f(x)}{g(x)}=\frac{h(x)\cdot\varphi(x)}{h(x)\cdot\psi(x)}=\frac{\varphi(x)}{\psi(x)}\text{ -- несократимая дробь}\\
+	\frac{\varphi(x)}{\psi(x)}, \frac{\varphi_1(x)}{\psi_1(x)}\\
+	\left.\begin{gathered}
+		\frac{\varphi(x)}{\psi(x)}=\frac{f(x)}{g(x)}\\
+		\frac{\varphi_1(x)}{\psi_1(x)}=\frac{f(x)}{g(x)}\\
+	\end{gathered}\right\} \Rightarrow \frac{\varphi(x)}{\psi(x)}=\frac{\varphi_1(x)}{\psi_1(x)}\\
+	\left(\varphi(x), \psi(x)\right) = 1\\
+	\psi_1(x)\vdots\psi(x)\\
+	\left(\varphi_1(x), \psi_1(x)\right)=1\\
+	\varphi(x)\vdots\varphi_1\\
+	\varphi(x)=c\cdot\varphi_1(x)\\
+	\varphi(x)\psi_1(x)=\varphi_1(x)\psi(x)\\
+	\xcancel{\text{чет хуйня какая-то}}\\
+	\blacksquare\\
+\end{multline*}
+Рациональная дробь называется \textbf{\textit{правильной}} если степень числителя больше степени знаменателя. В противном случае дробь \textbf{\textit{неправильная}}.
+\subsection*{Теорема о неправильной рациональной дроби}
+Всякая рациональная дробь представима (притом единственным способом) в виде суммы многочлена и неправильной рациональной дроби.\\
+$$\frac{f(x)}{g(x)}=q(x)+ \frac{r(x)}{g(x)}$$
+\textit{Доказательство:}
+\begin{multline*}
+	\deg f(x) \geq \deg g(x)\\
+	f(x)=g(x)\cdot q(x)+r(x)\\
+	\frac{f(x)}{g(x)}=\frac{q(x)\cdot g(x)+ r(x)}{g(x)}=q(x)+ \frac{r(x)}{g(x)}\\
+	\blacksquare\\
+\end{multline*}
+\section{Разложение рациональных дробей в сумму простейших.}
+Правильная рациональная дробь $\frac{f(x)}{g(x)}$ называется \textbf{\textit{простейшей}}, если ее знаменатель $g(x)$ является степенью неприводимого многочлена $p(x)$.
+$$g(x) = p^k(x), k \geq 1$$,
+а степень числителя $f(x)$ меньше степени $p(x)$.//
+$\alpha \in \mathbb{R}$ -- корень $g(x)$:\\
+\begin{flalign*}
+	I.&\frac{A}{x-\alpha}&\\
+	II. &\frac{A}{\left(x-\alpha\right)^k}, &k > 1&&&\\
+	III.&\frac{Mx+N}{x^2+px+q}, &D < 0&&&\\
+	IV. &\frac{Mx+N}{\left(x^2+px+q..\right)^k}, &k > 1&&&\\
+\end{flalign*}
+\subsection*{Основная Теорема рациональных дробей}
+Всякая произвольная рациональная дробь разлагается в сумму простейших дробей.
+\section{Линейные операции над матрицами и их свойства.}
+\subsection*{Общая информация о матрицах}
+\textbf{\textit{Матрицей}} назыается таблица чисел вида:
+\begin{equation*}
+	A_{m\times n} = \left(a_{ij}\right) = \left(
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		a_{21} & a_{22} & \ldots & a_{2n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{m1} & a_{m2} & \ldots & a_{mn}
+	\end{array}
+	\right)
+\end{equation*}, 
+где $a_{ij}$ -- \textbf{\textit{элементы матрицы}}, при этом $i$ -- номер строки, $j$ -- номер столбца.\\
+Число строк и столбцов матрицы называется ее \textbf{\textit{размерностью}} ($m\times n$).\\
+Элементы, стоящие на диагонали, идущей из верхнего левого угла образуют \textbf{\textit{главную диагональ}} $\left(a_{11}, a_{22}, \dots , a_{nn}\right)$.\\
+Если число строк равно числу столбцов $(m=n)$, матрица называется \textbf{\textit{квадратной}}, а число строк(столбцов) называется \textbf{\textit{порядком}} матрицы. Иначе -- матрица прямоугольная.\\
+Матрица, состоящая из одной строки называется \textbf{\textit{матрицей-строкой}}, а из одного столбца -- \textbf{\textit{матрицей-столбцом}}.\\
+Квадратная матрица, у которой все элементы, кроме главной диагонали равны нулю, называется \textbf{\textit{диагональной}} матрицей.
+\begin{equation*}
+	A= \left(
+	\begin{array}{cccc}
+		a_{11} & 0 & \ldots & 0\\
+		0 & a_{22} & \ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots\\
+		0 & 0 & \ldots & a_{mn}
+	\end{array}
+	\right)
+\end{equation*}
+Диагональная матрица, у которой каждый элемент главной диагонали равен 1, называется \textbf{\textit{единичной}} матрицей. Обозначаается буквой $E$.
+\begin{equation*}
+	E = \left(
+	\begin{array}{cccc}
+		1 & 0 & \ldots & 0\\
+		0 & 1 & \ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots\\
+		0 & 0 & \ldots & 1
+	\end{array}
+	\right)
+\end{equation*}
+Матрица, все элементы которой равны 0, называется \textbf{\textit{нулевой}}. Обозначается буквой $O$.
+\begin{equation*}
+	O = \left(
+	\begin{array}{cccc}
+		0 & 0 & \ldots & 0\\
+		0 & 0 & \ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots\\
+		0 & 0 & \ldots & 0
+	\end{array}
+	\right)
+\end{equation*}
+Квадратная матрица называется \textbf{\textit{треугольной}}, есди все элементы, расположенные по одну сторону от главной диагонали равны нулю.
+\begin{align*}
+	A = &\left(
+	\begin{array}{cccc}
+		a_{11} & 0 & \ldots & 0\\
+		a_{12} & a_{22} & \ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{m1} & a_{m2} & \ldots & a_{mn}
+	\end{array}
+	\right) \text{ или }
+		A = &\left(
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		0 & a_{22} & \ldots & a_{2n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		0 & 0 & \ldots & a_{mn}
+	\end{array}
+	\right) \\
+	 &\text{\textit{Нижняя труегольная}} &\text{\textit{Верхняя треугольная}}
+\end{align*}
+Две матрицы $A$ и $B$ называются \textbf{\textit{равными}}, если они имеют одинаковую размерность и их соответстсвующие элементы равны.
+\subsection*{Действия над матрицами}
+\begin{enumerate}
+	\item Сложение матриц (только для матриц одинаковой размерности).\\
+	Суммой двух матриц $A_{m\times n}=\left(a_{ij}\right)$ и $ B_{m\times n}=\left(b_{ij}\right)$ называется матрица $C_{m\times n}=\left(c_{ij}\right)$, такая что
+	$$c_{ij} = a_{ij} + b_{ij}, i=1,2,\dots ,m; j=1,2,\dots ,n$$
+	\textit{Свойства:}
+	\begin{enumerate}[1)]
+		\item $A+B =B+A$
+		\item $A+\left(B+C\right)=\left(A+B\right)+C$
+		\item $A+O=A$
+		\item $A-A=O$
+	\end{enumerate}
+	\item Умножение матрицы на число \\
+	Произведением матрицы $A_{m\times n}=\left(a_{ij}\right)$ на число $k$ называется матрица $ B_{m\times n}=\left(b_{ij}\right)$, такая что
+	$$b_{ij} = a_{ij} \cdot k, i=1,2,\dots,m; j=1,2,\dots ,n$$
+	\textit{Свойства:}
+	\begin{enumerate}[1)]
+		\item $1\cdot A =A$
+		\item $k\cdot\left(A + B\right)= k\cdot A + k\cdot B$
+		\item $O\cdot A=O$
+		\item $\left(k_1+k_2\right)\cdot A = k_1\cdot A + k_2\cdot A$
+		\item $k_1\cdot\left(k_2\cdot A\right)=\left(k_1\cdot k_2\right)\cdot A$
+	\end{enumerate}
+\end{enumerate}
+\section{Умножение матриц. Элементарные преобразования над матрицами.}
+Операция умножения для двух матриц вводится для случая, когда \textit{число столбцов первой матрицы равно числу строк второй матрицы}.\\
+Произведением $A_{m\times n}=\left(a_{ij}\right)$ на $ B_{n\times p}=\left(b_{jk}\right)$, называется матрица $C_{m\times p} = \left(c_{jk}\right)$, такая что 
+$$c_{ik}=a_{i1}\cdot b_{1k}+a_{i2}\cdot b_{2k}+\dots+a_{in}\cdot b_{nk}$$, то есть элемент $i$-ой строки $k$-го столбца матрицы $C$ равен сумме произведений элементов $i$-ой строки матрицы $A$ на соответствующие элементы $k$-го столбца матрицы $B$.
+$$A_{m\times \underline{n}}\cdot B_{\underline{n}\times p}=C_{m\times p}$$
+\begin{equation*}
+	\begin{tikzpicture}
+		\draw[blue, line width=1pt] (1,2) .. controls (3.5,3.5) .. (6,3);
+		\draw[red, line width=1pt] (2,2) .. controls (4,3) .. (6,2);
+		\draw[green, line width=1pt](3,2) .. controls (4,2.5) .. (6,1);
+		\foreach \x in {1,2,3}{
+			\foreach \y in {1,2,3}{
+				\fill (\x, \y) circle (2pt);
+			}
+		}
+		\foreach \x in {5,6,7,8,9}{
+			\foreach \y in {1,2,3}{
+				\fill (\x, \y) circle (2pt);
+			}
+		}
+		\draw[dashed, gray] (1,1.5)--(3, 1.5);
+		\draw[dashed, gray] (1,2.5)--(3, 2.5);
+		\draw[dashed, gray] (5.5,1)--(5.5, 3);
+		\draw[dashed, gray] (6.5,1)--(6.5, 3);
+		\draw (1,2) node[anchor=east]{\textit{i}};
+		\draw (6,1) node[anchor=north]{\textit{k}};
+		\draw (2,3) node[above=10]{\textit{A}};
+		\draw (7,3) node[above=10]{\textit{B}};
+	\end{tikzpicture}
+\end{equation*}
+\textit{Свойства}:\\
+\begin{enumerate}
+	\item $A\left(B C\right)=\left(A B\right)C$
+	\item $A \left( B+C\right)=A B + A C$
+	\item $\left(A+B\right) C = A C + B C$
+	\item $k \left(A B\right)=\left(k A\right) B$
+\end{enumerate}
+Матрицы $A$ и $B$ называются \textbf{\textit{перестановочнымми}} если $A\cdot B= B \cdot A$\\
+Если матрицы $A$ и $B$ перестановочны, то любые их натуральные степени перестановочны\\
+$$\left(AB\right)^{p}=A^pB^p$$
+\subsection*{Транспонирование}
+Матрица, полученная из данной заменой каждой ее строки столбцом с тем же номером называется \textbf{\textit{транспонированной}} к данной $\left(A^T\right)$.
+\subsection*{Элементарные преобразования}
+\begin{enumerate}
+	\item Перестановка местами двух строк (столбцов) матрицы.
+	\item Умножение всех элементов строки (столбца) матрицы на одно и то же число
+	\item Прибавление ко всем элементам одной строки (столбца) матрицы соответствующих элементов другой строки (столбца), умноженных на одно и то же ненулевое число.
+\end{enumerate}
+Две матрицы $A$ и $B$ называют \textbf{\textit{эквивалентными}} $A\sim B$, если одна из них может быть получена из другой с помощью элементарных преобразований.\\
+Матрица $A$ называется \textbf{\textit{ступенчатой}}, если она имеет вид:
+\begin{equation*}
+	A = \left(
+		\begin{array}{cccccc}
+			a_{11} & a_{12} & \ldots &a_{1r} & \ldots& a_{1k}\\
+			0 & a_{22} & \ldots&a_{2r}& \ldots& a_{2k}\\
+			\vdots & \vdots & \ddots &\vdots&\ddots& \vdots\\
+			0 & 0 & \ldots &a_{nr}&\ldots& a_{rk}
+		\end{array}
+	\right)
+\end{equation*}
+С помощью элементарных преобразований любую матрицу можно привести к ступенчатому виду.
+\section{Блочные матрицы и операции над ними. Прямая сумма квадратных матриц.}
+Если матрицу разбить на отдельные прямоугольные блоки, каждый из которых представляет собой матрицу меньшего размераи называется блоком исходной матрицы, то сама матрица называется \textbf{\textit{блочной}}.
+Прямой суммой $C=A\oplus B$ двух квадратных матриц называется квадратная блочная матрица $C$ порядка $m+n$, равная 
+\begin{equation*}
+	C=\left(\begin{matrix}
+		A & O\\
+		O & B\\
+	\end{matrix}\right)
+\end{equation*}, где $O$ -- нулевая матрица соответствующей размерности.
+\section{Определитель. Частный случай теоремы Лапласа.}
+Определеителем квадратной матрицы $A$ называетя число $\left|A\right|$, полученное по следующему правилу:
+\begin{enumerate}[a)]
+\item если $n=1$, то $A=\left(a\right)$ и $\left|A\right| = a$
+\item если $n=2$, то $A=\left( \begin{array}{cc}
+	a_{11} & a_{12}\\
+	a_{21}& a_{22}
+\end{array} \right)$ и $\left|A\right| = a_{11}\cdot a_{22} - a_{21}\cdot a_{12}$
+\begin{equation*}
+	\left(
+		\begin{aligned}
+			\begin{tikzpicture}
+				\draw[blue , line width=1pt] (1,2) -- (2,1);
+				\foreach \x in {1,2}{
+					\foreach \y in {1,2}{
+						\fill (\x, \y) circle (2pt);
+					}
+				}
+				
+			\end{tikzpicture}
+		\end{aligned}
+	\right)
+	 - 
+	 \left(
+		 \begin{aligned}
+		 		\begin{tikzpicture}
+		 		\draw[red, line width=1pt] (1,1) -- (2,2);
+		 		\foreach \x in {1,2}{
+		 			\foreach \y in {1,2}{
+		 				\fill (\x, \y) circle (2pt);
+		 			}
+		 		}
+		 	\end{tikzpicture}
+		 \end{aligned}
+	 \right)
+\end{equation*}
+\item Если $n=3$, то $A=\left(\begin{array}{ccc}
+	a_{11}& a_{12} &a_{13}\\
+	a_{21}& a_{22} &a_{23}\\
+	a_{31}& a_{32} &a_{33}\\
+\end{array}\right)$\\
+и $\left|A\right| = a_{11}\cdot a_{12}\cdot a_{13}+a_{12}\cdot a_{23}\cdot a_{31}+a_{13}\cdot a_{32}\cdot a_{21}-\left(a_{13}\cdot a_{22}\cdot a_{31}+a_{12}\cdot a_{33}\cdot a_{21}+a_{11}\cdot a_{23}\cdot a_{32}\right)$
+\begin{equation*}
+	\left(
+	\begin{aligned}
+		\begin{tikzpicture}
+				\draw[blue , line width=1pt] (1,3) -- (3,1);
+			\draw[red , line width=1pt] (1,2) -- (2,1)-- (3,3)--(1,2);
+			\draw[green , line width=1pt] (3,2) -- (2,3)-- (1,1)--(3,2);
+			\foreach \x in {1,2,3}{
+				\foreach \y in {1,2,3}{
+					\fill (\x, \y) circle (2pt);
+				}
+			}
+		\end{tikzpicture}
+	\end{aligned}
+	\right)
+	- 
+	\left(
+	\begin{aligned}
+		\begin{tikzpicture}
+			\draw[blue, line width=1pt] (1,1) -- (3,3);
+			\draw[red, line width=1pt] (1,2) -- (3,1)--(2,3)--(1,2);
+			\draw[green, line width=1pt] (2,1) -- (3,2)--(1,3)--(2,1);
+			\foreach \x in {1,2,3}{
+				\foreach \y in {1,2,3}{
+					\fill (\x, \y) circle (2pt);
+				}
+			}
+		\end{tikzpicture}
+	\end{aligned}
+	\right)
+\end{equation*}
+\end{enumerate}
+\textbf{\textit{Минором}} $M_{ij}$ элемента $a_{ij}$ называется определитель, полученный из данного определителя вычеркиванием $i$-ой строки и $j$-го столбца на пересечении которых стоит элемент $a_{ij}$\\
+Если $n>3$, то $
+	A  = \left(
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		a_{21} & a_{22} & \ldots & a_{2n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right)$,\\
+и 
+\begin{align*}
+	\left|A\right| &= a_{11}\cdot M_{11} - a_{12}\cdot M_{12}+\dots+\left(-1\right)^{1+n}\cdot a_{1n}\cdot M_{1n}=\\
+	&=\sum_{j=1}^{n}\left(-1\right)^{j+1}a_{1j}M_{1j}
+\end{align*}
+, где $M_{1j}$ -- минор элемента $a_{1j}, (j=1,2,\dots,n)$\\
+\textbf{\textit{Алгебраическим дополнением}} $A_{ij}$ элемента $a_{ij}$ называется минор этого элемента взятый со знаком $+$, если сумма номеров строки и столбца четная, и со знаком $-$, если сумма нечетная.
+$$A_{ij}=\left(-1\right)^{i+j}M_{ij}$$
+\subsection{Теорема Лапласа}
+Определитель равен сумме произведений элементов какой-нибудь строки (столбца) на их алгебраические дополнения.
+$$\left|A\right| = \sum_{j=1}^{n}a_{ij}\cdot A_{ij} \text{ \textit{для i-ой строки}}$$
+\textit{Доказательство (индукция):}
+\begin{enumerate}[1)]
+	\item $n=2\colon $\\
+	$\left|A\right| = \left|\begin{array}{cc}
+		a_{11}& a_{12}\\
+		a_{21}& a_{22}\\
+	\end{array}\right| = a_{21}A_{21}+a_{22}A_{22}=-a_{21}a_{12}+a_{22}a_{11}$
+	\item $n-1$ -- верно
+	\item $n$
+	\begin{multline*}
+		\left|
+		\begin{array}{cccc}
+			a_{11} & a_{12} & \ldots & a_{1n}\\
+			a_{21} & a_{22} & \ldots & a_{2n}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{n1} & a_{n2} & \ldots & a_{nn}
+		\end{array}
+		\right| = a_{11}M_{11} - a_{12}M_{12}+\dots+\left(-1\right)^{1+n}a_{1n}M_{1n} =\\
+		=a_{11}\sum_{j=2}^{n}a_{ij}M_{ij}^{11}-a_{12}\sum_{j=1, j\neq 2}^{n}\left(-1\right)^{i+j}a_{ij}M_{ij}^{12}+\dots+ \left(-1\right)^{1+n}a_{1n}\sum_{j=1}^{n-1}\left(-1\right)^{i+j} a_{ij}M_{ij}^{1n}=\\
+		= \dots + a_{ij}\left(-1\right)^{i+j}\sum_{k=1, k\neq j}^{n} \left(-1\right)^{1+k}a_{1k}M_{1k}^{ij}+ \dots=\\
+		= \dots + a_{ij}\left(-1\right)^{i+j}M_{ij}+\dots = \dots+a_{ij}A_{ij}+\dots\\
+		\blacksquare\\
+		\end{multline*}
+\end{enumerate}
+\section{Перечислить свойства определителя.}
+\textit{Свойства определителей:}
+\begin{enumerate}
+	\item Величина определителя не изменится, если его транспонировать
+	\begin{equation*}
+		\left|
+		\begin{array}{cccc}
+			a_{11} & a_{12} & \ldots & a_{1n}\\
+			a_{21} & a_{22} & \ldots & a_{2n}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{n1} & a_{n2} & \ldots & a_{nn}
+		\end{array}
+		\right| = \left|
+		\begin{array}{cccc}
+			a_{11} & a_{21} & \ldots & a_{n1}\\
+			a_{12} & a_{22} & \ldots & a_{n2}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{1n} & a_{2n} & \ldots & a_{nn}
+		\end{array}
+		\right|
+	\end{equation*}
+	\item При перестановке двух строк (или столбцов) определитель изменит знак на противоположный, сохраняя абсолютную величину.
+	\item Общий множитель всех элементов какой-либо строки или столбца можно вынести за знак определителя\\
+	\begin{multline*}
+		\left|
+		\begin{array}{cccc}
+			a_{11} & a_{12} & \ldots & a_{1n}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			\lambda a_{i1} & \lambda a_{i2} & \ldots & \lambda a_{in}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{n1} & a_{n2} & \ldots & a_{nn}
+		\end{array}
+		\right| = \lambda a_{i1}A_{i1}+\lambda a_{i2}A_{i2}+\dots+\lambda a_{in}A_{in}=\\\\
+		=\lambda\left(a_{i1}A_{i1}+a_{i2}A_{i2}+\dots+ a_{in}A_{in}\right) = \lambda\left|A\right|\\
+	\end{multline*}
+	\item Если все элементы некоторой строки (столбца) равны 0, то и сам определитель равен 0.\\
+	$ 
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		0&0&\ldots&0\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right| =0$
+	\item Если определитель имеет две одинаковые строки (столбца), то он равен 0.\\
+	\textit{Доказательство:}
+	\begin{multline*}
+		\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		 a_{i1} &  a_{i2} & \ldots & a_{in}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{i1} & a_{i2} & \ldots & a_{in}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right| =\left|A\right|\\
+	-\left|A\right| = \left|A\right| \Rightarrow \left|A\right| = 0\\
+	\blacksquare\\
+	\end{multline*}
+	\item Если элементы двух строк (столбцов) пропорциональны, то определитель = 0
+	\begin{equation*}
+		\left|
+		\begin{array}{cccc}
+			a_{11} & a_{12} & \ldots & a_{1n}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{i1} & a_{i2} & \ldots & a_{in}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			\lambda a_{i1} & \lambda a_{i2} & \ldots & \lambda a_{in}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			a_{n1} & a_{n2} & \ldots & a_{nn}
+		\end{array}
+		\right| = 0\\
+	\end{equation*}
+\textit{Доказательство:}\\
+Следует из п.3 и п.5
+\item Если каждый элемент строки (столбца) предствляет собой сумму двух слагаемых, то определитель может быть предствлен в виде суммы двух определителей, один из которых в соответствующей строке (столбце) имеет первые из упомянутых слагаемых, а другой - вторые; элементы, стоящие на остальных местах у всех определителей одни и те же.
+\item Если к элементам некоторой строки (столбца) определителя прибавить соответствующие элементы другой строки (столбца), умноженные на одно и то же ненулевое число, то величина определителя не изменится
+$$\left|
+\begin{array}{cccc}
+	a_{11} & a_{12} & \ldots & a_{1n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{k1} & a_{k2} & \ldots & a_{kn}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{s1}+\lambda a_{k1} & a_{s2}+\lambda a_{k2} & \ldots & a_{sn}+\lambda a_{kn}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{array}
+\right| = \left|
+\begin{array}{cccc}
+	a_{11} & a_{12} & \ldots & a_{1n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{k1} & a_{k2} & \ldots & a_{kn}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{s1} & a_{s2} & \ldots & a_{sn}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	a_{n1} & a_{n2} & \ldots & a_{nn}
+\end{array}
+\right|\\$$	
+\textit{Доказательство:}\\
+Следует из п.6 и п.7
+\item Сумма поизведений элементов какой-либо строки (столбца) на алгебраическое дополнение соответствующих элементов другой строки (столбца) равна нулю.
+$$a_{k1}A_{l1}+a_{k2}A_{l2}+\dots+a_{kn}A_{ln}=0$$
+\textit{Доказательство:}
+\begin{multline*}
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{l1} & a_{l2} & \ldots & a_{ln}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|=a_{l1}A_{l1}+a_{l2}A_{l2}+\dots+a_{ln}A_{ln}\\\\
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		b_{1} & b_{2} & \ldots & _{n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|=b_{1}A_{l1}+b_{2}A_{l2}+\dots+b_{n}A_{ln}\\\\
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|=a_{k1}A_{l1}+a_{k2}A_{l2}+\dots+a_{kn}A_{ln}=0\\
+	\text{\textit{(Свойство 5)}}\\
+	\blacksquare\\
+\end{multline*}
+\item Определитель треугольной матрицы равен произведению элементов главной диагонали
+$$\left|
+\begin{array}{cccc}
+	a_{11} & a_{12} & \ldots & a_{1n}\\
+	0 & a_{22} & \ldots & a_{2n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	0 & 0 & \ldots & a_{mn}
+\end{array}
+\right| = a_{11}a_{22}\dots a_{nn}$$
+\item Пусть дан определитель, все элементы которого, стоящие в первых $k$ строках и последних (от $k+1$ до $n$) столбцах, равны нулю, тогда этот определитель будет равен произведению двух своих миноров.
+\begin{multline*}
+	d = \left|
+	\begin{array}{ccccccc}
+		a_{11} & a_{12} & \ldots & a_{1k} & 0 &\ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \ddots&\vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kk} & 0 &\ldots & 0\\
+		a_{k+1\text{\space}1} & a_{k+1\text{\space}2} & \ldots & a_{k+1\text{\space}k}& a_{k+1\text{\space}k+1}&\ldots &a_{k+1\text{\space}n}\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \ddots& \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nk} & a_{nk+1}&\ldots & a_{nn}  
+	\end{array}
+	\right|\\\\
+	d =\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1k}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kk}
+	\end{array}
+	\right|\cdot \left|
+	\begin{array}{ccc}
+	 a_{k+1\text{\space}k+1}&\ldots &a_{k+1\text{\space}n}\\
+		\vdots & \ddots & \vdots\\
+		a_{nk+1}&\ldots & a_{nn} 
+	\end{array}
+	\right|\\
+\end{multline*}
+\item Определитель произведения матриц $n$-го порядка равен произведению определителей этих матриц.
+$$\left|AB\right| =\left|A\right|\cdot\left|B\right| $$
+\end{enumerate}
+\section{Свойство о перестановке двух строк (столбцов) определителя.}
+При перестановке двух строк (или столбцов) определитель изменит знак на противоположный, сохраняя абсолютную величину.\\
+\textit{Доказательство:}\\
+\begin{align*}
+	\left|A\right|&=
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots&\vdots&\vdots&\vdots\\
+		a_{i1} & a_{i2} & \ldots & a_{in}\\
+		a_{i+1 \text{\space}1} & a_{i+1 \text{\space}2} & \ldots & a_{i+1\text{\space} n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|\\\\
+	\left|A^\prime\right|&=
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots&\vdots&\vdots&\vdots\\
+		a_{i+1 \text{\space}1} & a_{i+1 \text{\space}2} & \ldots & a_{i+1\text{\space} n}\\
+		a_{i1} & a_{i2} & \ldots & a_{in}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|\\
+	\left|A\right|&=\sum_{j=1}^{n}a_{ij}A_{ij}\\
+	\left|A^\prime\right|&=\sum_{j=1}^{n}a_{ij}A_{ij}^\prime\\
+	&\left.\begin{gathered}
+		\begin{aligned}
+			A_{ij}^\prime &= \left(-1\right)^{i+1+j}M_{ij}\\
+			A_{ij} &= \left(-1\right)^{i+j}M_{ij}\\
+		\end{aligned}
+	\end{gathered}\right\} \Rightarrow -A_{ij}^\prime = A_{ij}\Rightarrow \left|A^\prime\right|=-\left|A\right|\\
+	\blacksquare\\
+\end{align*}
+\section{Свойство определителя об алгебраических дополнениях.}
+Сумма поизведений элементов какой-либо строки (столбца) на алгебраическое дополнение соответствующих элементов другой строки (столбца) равна нулю.
+$$a_{k1}A_{l1}+a_{k2}A_{l2}+\dots+a_{kn}A_{ln}=0$$
+\textit{Доказательство:}
+\begin{multline*}
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{l1} & a_{l2} & \ldots & a_{ln}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|=a_{l1}A_{l1}+a_{l2}A_{l2}+\dots+a_{ln}A_{ln}\\\\
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		b_{1} & b_{2} & \ldots & _{n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|=b_{1}A_{l1}+b_{2}A_{l2}+\dots+b_{n}A_{ln}\\\\
+	\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kn}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}
+	\right|=a_{k1}A_{l1}+a_{k2}A_{l2}+\dots+a_{kn}A_{ln}=0\\
+	\text{\textit{(Свойство 5)}}\\
+	\blacksquare\\
+\end{multline*}
+\section{Свойство определителя треугольной матрицы.}
+Определитель треугольной матрицы равен произведению элементов главной диагонали
+$$\left|
+\begin{array}{cccc}
+	a_{11} & a_{12} & \ldots & a_{1n}\\
+	0 & a_{22} & \ldots & a_{2n}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	0 & 0 & \ldots & a_{mn}
+\end{array}
+\right| = a_{11}a_{22}\dots a_{nn}$$
+\textit{Доказательство (по индукции):}
+	\begin{enumerate}[1)]
+	\item 
+	\begin{equation*}
+		\left|
+		\begin{array}{cc}
+			a&b\\
+			0&c
+		\end{array}
+		\right|=a\cdot c-b\cdot0 = ac \text{ -- верно}
+	\end{equation*}
+	\item $n-1$ -- верно
+	\item 
+	\begin{multline*}
+		\left|
+		\begin{array}{cccc}
+			a_{11} & a_{12} & \ldots & a_{1n}\\
+			0 & a_{22} & \ldots & a_{2n}\\
+			\vdots & \vdots & \ddots & \vdots\\
+			0 & 0 & \ldots & a_{mn}
+		\end{array}
+		\right| = a_{11}\cdot \left|
+		\begin{array}{ccc}
+			a_{22} & \ldots & a_{2n}\\
+			\vdots & \ddots & \vdots\\
+			0 & \ldots & a_{mn}
+		\end{array}
+		\right| = a_{11}a_{22}\dots a_{nn}\\
+		\blacksquare\\
+	\end{multline*}
+\end{enumerate}
+\section{Свойство определителя полураспавшейся матрицы.}
+ Пусть дан определитель, все элементы которого, стоящие в первых $k$ строках и последних (от $k+1$ до $n$) столбцах, равны нулю, тогда этот определитель будет равен произведению двух своих миноров.
+\begin{multline*}
+	d = \left|
+	\begin{array}{ccccccc}
+		a_{11} & a_{12} & \ldots & a_{1k} & 0 &\ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \ddots&\vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kk} & 0 &\ldots & 0\\
+		a_{k+1\text{\space}1} & a_{k+1\text{\space}2} & \ldots & a_{k+1\text{\space}k}& a_{k+1\text{\space}k+1}&\ldots &a_{k+1\text{\space}n}\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \ddots& \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nk} & a_{nk+1}&\ldots & a_{nn}  
+	\end{array}
+	\right|\\\\
+	d =\left|
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1k}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{k1} & a_{k2} & \ldots & a_{kk}
+	\end{array}
+	\right|\cdot \left|
+	\begin{array}{ccc}
+		a_{k+1\text{\space}k+1}&\ldots &a_{k+1\text{\space}n}\\
+		\vdots & \ddots & \vdots\\
+		a_{nk+1}&\ldots & a_{nn} 
+	\end{array}
+	\right|\\
+\end{multline*}
+Если квадратную матрицу с помощью горизонтальных и вертикальных линий можно разбить на блоки, где на главной диагонали стоят квадратные матрицы, а по одной стороне от главной диагонали стоит нулевая матрица, то такая матрица называется \textbf{\textit{полураспавшаяся}}.\\
+\textit{Доказательство (по индукции):}
+\begin{enumerate}[1)]
+	\item 
+	\begin{equation*}
+		\left|
+		\begin{array}{cc}
+			a&b\\
+			0&c
+		\end{array}
+		\right|=a\cdot c-b\cdot0 = ac \text{ -- верно}
+	\end{equation*}
+	\item $n-1$ -- верно
+	\item 
+	\begin{multline*}
+		a_{11}A_{11}+a_{12}A{12}+\dots+a_{1k}A_{1k}\\
+		A_{ij}=\left|\begin{array}{cc}
+			B_j&0\\
+			C_j&D
+		\end{array}\right|=\left|B_j\right|\cdot \left|D\right|\\
+		d=a_{11}\cdot \left|B_1\right|\cdot \left|D\right|+a_{12}\cdot \left|B_2\right|\cdot \left|D\right|+\dots+a_{1k}\cdot \left|B_k\right|\cdot \left|D\right|=\\
+		=\left(a_{11}\cdot \left|B_1\right|+a_{12}\cdot \left|B_2\right|\cdot +\dots+a_{1k}\cdot \left|B_k\right|\right)\cdot \left|D\right|=\left|B\right|\cdot \left|D\right|\\
+		\blacksquare\\
+	\end{multline*}
+\end{enumerate}
+\section{Свойство определителя произведения квадратных матриц.}
+Определитель произведения матриц $n$-го порядка равен произведению определителей этих матриц.
+$$\left|AB\right| =\left|A\right|\cdot\left|B\right|$$
+\textit{Доказательство:}
+\begin{multline*}
+	\left|A\right|\cdot\left|B\right| =\left|
+		\begin{matrix}
+			a_{11} & a_{12} & \ldots & a_{1n} & 0 & 0 &\ldots & 0\\
+			a_{21} & a_{22} & \ldots & a_{2n} & 0 & 0 &\ldots & 0\\
+			\vdots & \vdots & \ddots & \vdots& \vdots& \vdots& \ddots&\vdots\\
+			a_{n1} & a_{n2} & \ldots & a_{nn} & 0 & 0 &\ldots & 0\\
+			-1 & 0 & \ldots & 0& b_{11} &b_{12}&\ldots& b_{1n}\\
+			0& -1 & \ldots & 0& b_{21}&b_{22}&\ldots &b_{2n}\\
+			\vdots & \vdots & \ddots & \vdots& \vdots& \vdots& \ddots& \vdots\\
+			0 & 0 & \ldots & -1 & b_{n1}&b_{n2}&\ldots & b_{nn}  
+		\end{matrix}
+	\right|=\\
+	=\left|
+	\begin{matrix}
+		0 & 0 &\ldots & 0 &\sum a_{1i}\cdot b_{i1}&\sum a_{1i}\cdot b_{i2}&\ldots&\sum a_{1i}\cdot b_{in}\\
+		0 & 0 &\ldots & 0 &\sum a_{2i}\cdot b_{i1}&\sum a_{2i}\cdot b_{i2}&\ldots&\sum a_{2i}\cdot b_{in}\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \vdots& \ddots&\vdots\\
+		0 & 0 &\ldots & 0 &\sum a_{ni}\cdot b_{i1}&\sum a_{ni}\cdot b_{i2}&\ldots&\sum a_{ni}\cdot b_{in}\\
+		-1 & 0 & \ldots & 0& b_{11} &b_{12}&\ldots& b_{1n}\\
+		0& -1 & \ldots & 0& b_{21}&b_{22}&\ldots &b_{2n}\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \vdots& \ddots& \vdots\\
+		0 & 0 & \ldots & -1 & b_{n1}&b_{n2}&\ldots & b_{nn}  
+	\end{matrix}
+	\right|=\\
+		=\left(-1\right)^n\cdot\left|
+	\begin{matrix}
+		\sum a_{1i}\cdot b_{i1}&\sum a_{1i}\cdot b_{i2}&\ldots&\sum a_{1i}\cdot b_{in}& 0 & 0 &\ldots & 0 \\
+		\sum a_{2i}\cdot b_{i1}&\sum a_{2i}\cdot b_{i2}&\ldots&\sum a_{2i}\cdot b_{in}& 0 & 0 &\ldots & 0 \\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \vdots& \ddots&\vdots\\
+		\sum a_{ni}\cdot b_{i1}&\sum a_{ni}\cdot b_{i2}&\ldots&\sum a_{ni}\cdot b_{in}& 0 & 0 &\ldots & 0 \\
+		b_{11} &b_{12}&\ldots& b_{1n}&-1 & 0 & \ldots & 0\\
+		b_{21}&b_{22}&\ldots &b_{2n}&0& -1 & \ldots & 0\\
+		\vdots & \vdots & \ddots & \vdots& \vdots& \vdots& \ddots& \vdots\\
+		b_{n1}&b_{n2}&\ldots & b_{nn} &0 & 0 & \ldots & -1 
+	\end{matrix}
+	\right|=\\
+	=\left(-1\right)^n\left| A\cdot B\right| =\left| A\cdot B\right|\\
+	\blacksquare\\
+\end{multline*}
+\section{Операции над строками матрицы. Линейно зависимые и независимые строки матрицы.}
+Две строки называются \textbf{\textit{равными}}, если все их элементы равны.\\
+Строка $e$ называется \textbf{\textit{линейной комбинацией}} строк $e_1, e_2,\dots,e_n$, если она равна сумме произведений этих строк на произвольные вещественыне числа.
+$$e=\left(\lambda_1 e_{1}+ \lambda_2 e_{2}+ \dots+ \lambda_n e_{n}\right)$$
+Строки $e_1, e_2,\dots, e_n$ называют \textbf{\textit{линейно-зависимыми}}, если существуют такие числа $\lambda_1, \lambda_2, \dots, \lambda_n$, не все равные нулю, что линейная комбинация строк матрицы равна нулевой строке.
+\begin{multline*}
+	 \lambda_1 e_{1}+\lambda_2 e_{2}+ \dots+ \lambda_n e_{n}=O\\
+	O = \left(0,0,\dots,0\right)\\
+\end{multline*}
+Линейная зависимость строк матрицы означает, что хотя бы одна строка является линейной комбинацией остальных\\
+Пусть $\lambda_n\neq0$
+$$e_n=\left(-\frac{\lambda_1}{\lambda_n}\right)e_1+\left(-\frac{\lambda_2}{\lambda_n}\right)e_2+\dots+\left(-\frac{\lambda_{n-1}}{\lambda_n}\right)e_{n-1}$$
+Строки $e_1, e_2, \dots, e_n$ называются \textbf{\textit{линейно-независимыми}}, если их линейная комбинация $\lambda_1 e_{1}+\lambda_2 e_{2}+ \dots+ \lambda_n e_{n}=O$ равна нулевой строке $\Leftrightarrow$ все $\lambda_i$ равны нулю $\lambda_1=\lambda_2=\dots=\lambda_n=0$
+\subsection*{Операции над строками матрицы}
+\begin{enumerate}
+	\item $\lambda e_m = \left(\lambda a_{m1}, \lambda a_{m2} \dots, \lambda a_{mn}\right)$
+	\item $e_k+e_s=\left(\left(a_{k1}+a_{s1} \right),\left(a_{k2}+a_{s2} \right) \dots, \left(a_{kn}+a_{sn} \right)\right)$
+\end{enumerate}
+\section{Ранг матрицы. Теорема о ранге матрицы и следствия из нее.}
+Максимальное число линейно-независимых строк в матрице называется ее \textbf{\textit{рангом}}.\\ $rang A = r$ \\$r \leq $число строк\\
+\textbf{\textit{Минором $k$-го порядка}} матрицы $A$ называется определитель, полученный из элементов, стоящих на пересечении выделенных произвольным образом $k$ строк и $k$ столбцов.
+\subsection*{Теорема о ранге матрицы}
+Наивысший порядок отличных от 0 миноров матрицы равен рангу этой матрицы.\\
+\textit{Доказательство:}
+\begin{multline*}
+	A=\left|
+	\begin{array}{cccccccc}
+		a_{11} & a_{12} & \ldots & a_{1r}&\vline &  a_{1\text{\space}r+1} &\ldots & a_{1n}\\
+		\vdots & \vdots & \boxed{D} & \vdots&\vline& \vdots& \ddots&\vdots\\
+		a_{r1} & a_{r2} & \ldots & a_{rr}&\vline & a_{r\text{\space}r+1} &\ldots & a_{rn}\\
+		\hline
+		a_{r+1\text{\space}1} & a_{r+1\text{\space}2} & \ldots & a_{r+1\text{\space}r}&& a_{r+1\text{\space}r+1}&\ldots &a_{r+1\text{\space}n}\\
+		\vdots & \vdots & \ddots & \vdots&& \vdots& \ddots& \vdots\\
+		a_{s1} & a_{s2} & \ldots & a_{sr} && a_{sr+1}&\ldots & a_{sn}  
+	\end{array}
+	\right|\\
+	D\neq O\\
+	e_1, \dots, e_r \text{ -- линейно-независимые строки}\\
+	e_{r+1}, \dots, e_s\\
+	r+1\leq k\leq s\\
+	1\leq j \leq n\\
+	M=\left|\begin{matrix}
+			a_{11} & a_{12} & \ldots & a_{1r}&a_{1j}\\
+			\vdots&\vdots&\ddots&\vdots&\vdots\\
+			a_{r1} & a_{r2} & \ldots & a_{rr}&a_{rj}\\
+			a_{k1} & a_{k2} & \ldots & a_{kr}&a_{kj}
+	\end{matrix} \right|=0 \text{ -- окаймляющий минор}\\
+	r+1 \leq j \leq n \Rightarrow \text{ минор }A\\
+	1 \leq j \leq r\\
+	M=a_{1j}A_1+\dots+a_{rj}A_r+a_{kj}\cdot\left(-1\right)^{2r+2}\cdot D=0\\
+	a_{kj}=-\frac{A_1}{D}a_{1j}-\dots-\frac{A_r}{D}a_{rj}\\
+	e_{k}=-\frac{A_1}{D}e_{1}-\dots-\frac{A_r}{D}e_{r} \Rightarrow e_1, \dots, e_r, e_k \text{ -- линейно-зависимые строки}\\
+	\Downarrow\\
+	rang A = r\\
+	\blacksquare\\
+\end{multline*}
+\subsection*{Следствия из теоремы о ранге матрицы}
+\begin{enumerate}
+	\item Максимальное число линейно-независимых столбцов всякой матрицы равно максимальному числу линейно-независимых строк, то есть, равно рангу этой матрицы.
+	\item Определитель $n$-го порядка тогда и только тогда равен 0, когда между его строками существует линейная зависимость.
+	\item Элементарные преобразования не меняют ранг матрицы.
+\end{enumerate}
+\section{Утверждения о ранге матрицы. Свойства ранга.}
+Свойства ранга матрицы:
+\begin{enumerate}
+	\item Если $A_{m\times n}$, то $rang A \leq \min(m,n)$
+	\item $rang A = 0 \Leftrightarrow $ все элементы $0$
+	\item $rang A_n=n \Leftrightarrow \left|A\right|\neq0$
+	\item $rang A = rang A^T$
+	\item Если добавить $e=0, rang A$ не изменится.
+\end{enumerate}
+\section{Теорема о приведении матрицы к ступенчатому виду. Элементарные преобразования как умножение матриц.}
+\subsection*{Элементарные преобразования над матрицами}
+\begin{enumerate}
+	\item Перестановка $A_{m\times n}$\\
+	Для перестановки $i$-ой и $j$-ой строки (столбца) нужно умножить слева (справа) на квадратную матрицу порядка  $m(n)$, вида:
+	\begin{align*}
+	S_{\text{лев}} = \left(
+		\begin{matrix}
+			1&\ldots&0&\ldots&0&\ldots&0\\
+			\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+			0&\ldots&0&\ldots&1&\ldots&0\\
+			\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+			0&\ldots&1&\ldots&0&\ldots&0\\
+			\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+			0&\ldots&0&\ldots&0&\ldots&0\\
+		\end{matrix}
+		\right)\begin{matrix}
+			1\\
+			\vdots\\
+			i\\
+			\vdots\\
+			j\\
+			\vdots\\
+			m\\
+		\end{matrix}
+		S_{\text{прав}} = 
+		\begin{aligned}
+			&\left(
+			\begin{matrix}
+				1&\ldots&0&\ldots&0&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&0&\ldots&1&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&1&\ldots&0&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&0&\ldots&0&\ldots&0\\
+			\end{matrix}\right)&\\
+			&\text{\space\space\space}\begin{matrix}
+				1&\ldots&i&\ldots&j&\ldots&n\\
+			\end{matrix}&\\
+		\end{aligned}
+		\end{align*}
+		\item Умножение всех элементов строки (столбца) на одно и то же число $\neq 0$\\
+		Для $i$-ой строки ($j$-го столбца) умножаем матрицу слева (справа)  на матрицу вида:
+		\begin{align*}
+			S_{\text{лев}} = \left(
+			\begin{matrix}
+				1&\ldots&0&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&\lambda&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&0&\ldots&1\\
+			\end{matrix}
+			\right)\begin{matrix}
+				1\\
+				\vdots\\
+				i\\
+				\vdots\\
+				m\\
+			\end{matrix} &&
+			S_{\text{прав}} = 
+			\begin{aligned}
+				&\left(
+				\begin{matrix}
+					1&\ldots&0&\ldots&0\\
+					\vdots&\ddots&\vdots&\ddots&\vdots\\
+					0&\ldots&\lambda&\ldots&0\\
+					\vdots&\ddots&\vdots&\ddots&\vdots\\
+					0&\ldots&0&\ldots&1\\
+				\end{matrix}\right)&\\
+				&\text{\space\space\space}\begin{matrix}
+					1&\ldots&j&\ldots &n\\
+				\end{matrix}&\\
+			\end{aligned}
+		\end{align*}
+		\item Прибавление к элементам одной $i$-ой строки (столбца) всех элементов другой $j$-ой строки (столбца), умноженных на $\lambda\neq0$\\
+		Нужно умножить $A_{m\times n}$ слева (справа) на матрицу порядка $m(n)$ вида:
+		\begin{align*}
+			S_{\text{лев}} = \left(
+			\begin{matrix}
+				1&\ldots&0&\ldots&0&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&1&\ldots&\lambda&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&0&\ldots&1&\ldots&0\\
+				\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+				0&\ldots&0&\ldots&0&\ldots&1\\
+			\end{matrix}
+			\right)\begin{matrix}
+				1\\
+				\vdots\\
+				i\\
+				\vdots\\
+				j\\
+				\vdots\\
+				m\\
+			\end{matrix} &&
+			S_{\text{прав}} = 
+			\begin{aligned}
+				&\left(
+				\begin{matrix}
+					1&\ldots&0&\ldots&0&\ldots&0\\
+					\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+					0&\ldots&1&\ldots&0&\ldots&0\\
+					\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+					0&\ldots&\lambda&\ldots&1&\ldots&0\\
+					\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+					0&\ldots&0&\ldots&0&\ldots&1\\
+				\end{matrix}\right)&\\
+				&\text{\space\space\space}\begin{matrix}
+					1&\ldots&i&\ldots &j&\ldots &n\\
+				\end{matrix}&\\
+			\end{aligned}
+		\end{align*}
+\end{enumerate}
+\section{Обратная матрица и ее свойства. Теорема о существовании и единственности обратной матрицы.}
+Если $A$ -- квадратная матрица, от \textbf{\textit{обратной}} к ней называется матрица $A^{-1}$, такая что $A\cdot A^{-1} = E$ и $A^{-1}\cdot A = E$\\
+\textbf{\textit{Невырожденной}} матрицей называется квадратная матрица, определитель которой отличен от 0. В противном случае матрица -- \textbf{\textit{вырожденная}}.
+\subsection*{Теорема о существовании и единственности обратной матрицы}
+Матрица $A$ имеет обратную и при этом только одну тогда и только тогда, когда эта матрица невырожденная.\\
+\textit{Доказательство:}\\
+$\boxed{\Rightarrow}$
+\begin{multline*}
+	\exists A^{-1}\Rightarrow A\cdot A^{-1} = E\\
+	\text{Пусть } \left|A\right| = 0\\
+	\Downarrow\\
+	\left.\begin{gathered}
+		\left|A\cdot A^{-1}\right| = \left|A\right|\cdot \left|A^{-1}\right| = 0\\
+		\left|A\cdot A^{-1}\right| = E = 1\\
+	\end{gathered}\right\} \text{ противоречие}\\
+	\Downarrow\\
+	|A| \neq 0 \Rightarrow A \text{ -- невырожденная}\\
+\end{multline*}
+$\boxed{\Leftarrow}$
+\begin{multline*}
+	A \text{ -- невырожденная}\\
+	\tilde{A} \text{ -- союзная матрица (состоит из алгебраических дополнений элементов)}\\
+	A\cdot \tilde{A}^T = \left(
+	\begin{array}{cccc}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		a_{21} & a_{22} & \ldots & a_{2n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{nn}
+	\end{array}\right)
+	\cdot\left(
+	\begin{array}{cccc}
+	A_{11} & A_{21} & \ldots & A_{n1}\\
+	A_{12} & A_{22} & \ldots & A_{n2}\\
+	\vdots & \vdots & \ddots & \vdots\\
+	A_{1n} & A_{2n} & \ldots & A_{nn}
+	\end{array}
+	\right)=\\
+	=\left(
+	\begin{array}{cccc}
+		\sum_{i=1}^{n} a_{1i}A_{1i} & \sum_{i=1}^{n}a_{1i}A_{2i} & \ldots & \sum_{i=1}^{n}a_{1i}A_{ni}\\
+		\sum_{i=1}^{n}a_{2i}A_{1i} & \sum_{i=1}^{n}a_{2i}A_{2i} & \ldots & \sum_{i=1}^{n}a_{2i}A_{ni}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		\sum_{i=1}^{n}a_{ni}A_{1i} & \sum_{i=1}^{n}a_{ni}A_{2i} & \ldots & \sum_{i=1}^{n}a_{ni}A_{ni}\\
+	\end{array}\right)=\\
+	=\left(\begin{matrix}
+		|A|&0&\ldots&0\\
+		0&|A|&\ldots&0\\
+		0&0&\ldots&|A|
+	\end{matrix}\right) = |A|\cdot E\Rightarrow A\cdot \frac{1}{|A|}\cdot \tilde{A}^T=E\\
+	\Downarrow\\
+	A^{-1}=A\frac{1}{|A|}\tilde{A}^T\\
+	\blacksquare\\
+\end{multline*}
+\subsection*{Свойства обратной матрицы}
+\begin{enumerate}
+	\item $\left|A^{-1}\right| = \frac{1}{|A|}$
+	\item $\left(A\cdot B\right)^{-1} = B^{-1}\cdot A^{-1}$
+	\item $\left(A^{-1}\right)^T=\left(A^T\right)^{-1}$
+	\item $\left(A^{-1}\right)^{-1}=A$
+\end{enumerate}
+\section{Системы линейных уравнений. Правило Крамера.}
+\textbf{\textit{Системой линейных уравнений}}, состоящей из $m$-уравнений с $n$ неизвестными называется система вида:
+\begin{equation}
+	\label{SLU}
+	\begin{cases}
+		a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n=b_1\\
+		a_{21}x_1+a_{22}x_2+\dots+a_{2n}x_n=b_2\\
+		\dots\\
+		a_{m1}x_1+a_{m2}x_2+\dots+a_{mn}x_n=b_m\\
+	\end{cases}
+\end{equation}, 
+где $a_{ij} (i=1,2,\dots,m; j=1,2,\dots,n)$ -- коэффициенты системы, $b_i$ - свободные члены.\\
+\textbf{\textit{Решением }}системы (\ref{SLU}) назыавются n значений неизвестных $x_1=c_1, x_2=c_2,\dots,x_n=c_n$, при подстановке которых в систему, все уравнения обращаются в верные равенства (тождества).\\
+Система уравнений называется \textbf{\textit{совместной}}, если она имеет хотя бы одно решение и \textbf{\textit{несовместной}}, если ни одного решения нет.\\
+Совместная система называется \textbf{\textit{определенной}}, если она имеет единственное решение и \textbf{\textit{неопределенной}}, если решений множество.\\
+Каждое решение неопределенной системы называется \textbf{\textit{частным решением}}. Совокупность всех частных решений наызывается \textbf{\textit{общим решением }}системы.\\
+Две системы линейных уравнений назыают \textbf{\textit{эквивалентными}} (равносильными), если каждое решение одной из них является решеним другой и наоборот.\\
+Систему линейных уравнений называют \textbf{\textit{однородной}}, если все свободные члены равны 0.\\
+Однородная система линейных уравнений всегда совместна, т.к. $x_1=x_2=\dots=x_n=0$ является решением системы (тривиальным).\\
+\textit{Матричная форма записи:}
+\begin{multline*}
+	A\cdot X = B\\
+	A = \left(\begin{matrix}
+		a_{11}&a_{12}&\ldots&a_{1n}\\
+		a_{21}&a_{22}&\ldots&a_{2n}\\
+		\vdots&\vdots&\ddots&\vdots\\
+		a_{m1}&a_{m2}&\ldots&a_{mn}\\
+	\end{matrix}\right)\\
+	X = \left(\begin{matrix}
+		x_1\\
+		x_2\\
+		\vdots\\
+		x_m\\
+	\end{matrix}\right)\\B = \left(\begin{matrix}
+	b_1\\
+	b_2\\
+	\vdots\\
+	b_m\\
+	\end{matrix}\right)\\
+	\left(A|B\right) = \left(\begin{matrix}
+		a_{11}&a_{12}&\ldots&a_{1n}&\vline&b_1\\
+		a_{21}&a_{22}&\ldots&a_{2n}&\vline&b_2\\
+		\vdots&\vdots&\ddots&\vdots&\vline&\\
+		a_{m1}&a_{m2}&\ldots&a_{mn}&\vline&b_m\\
+	\end{matrix}\right) \text{ -- расширенная матрица системы }\\
+\end{multline*}
+\subsection*{Метод Крамера}
+\begin{align*}
+	&\begin{aligned}
+	\Delta &= \left|\begin{matrix}
+		a_{11}&a_{12}&\ldots&a_{1n}\\
+		a_{21}&a_{22}&\ldots&a_{2n}\\
+		\vdots&\vdots&\ddots&\vdots\\
+		a_{m1}&a_{m2}&\ldots&a_{mn}\\
+	\end{matrix}\right|\\
+	\Delta_i &= \left|\begin{matrix}
+		a_{11}&\ldots&b_{1}&\ldots& a_{12}&\ldots&a_{1n}\\
+		a_{21}&\ldots&b_{1}&\ldots& a_{22}&\ldots&a_{2n}\\
+		\vdots&\ddots&\vdots&\ddots&\vdots&\ddots&\vdots\\
+		a_{m1}&\ldots&b_{1}&\ldots& a_{m2}&\ldots&a_{mn}\\
+	\end{matrix}\right|
+	\end{aligned}\\
+	&\begin{aligned}
+		\Delta\neq0\colon& \text{система определена}\\
+		\Delta=0\colon & \Delta_i\neq0 \Rightarrow\text{система несовместна}\\
+		&\Delta_i=0 \Rightarrow\text{сомнительный случай}\\
+	\end{aligned}\\
+	&x_i=\frac{\Delta_i}{\Delta}, i = 1,2,\dots,n\\
+\end{align*}
+\section{Матричный метод решения системы линейных уравнений.}
+\begin{multline*}
+	\begin{cases}
+		a_{11}x_1+a_{12}x_2+\dots+a_{1n}x_n=b_1\\
+		a_{21}x_1+a_{22}x_2+\dots+a_{2n}x_n=b_2\\
+		\dots\\
+		a_{m1}x_1+a_{m2}x_2+\dots+a_{mn}x_n=b_m\\
+	\end{cases}\\
+	\begin{aligned}
+		A\cdot X &= B &|\cdot A^{-1} \text{ (слева)}\\
+		A^{-1}\cdot A\cdot X&= A^{-1}\cdot B\\
+		&\Downarrow\\
+		E\cdot X &= A^{-1}\cdot B\\
+		X &= A^{-1}\cdot B\\
+	\end{aligned}\\	
+\end{multline*}
+\section{Метод Гаусса.}
+$\boxed{\Rightarrow}$Последовательное исключение неизвестных с помощью элементарных преобразований (приведение матрицы $A|B$) к ступенчатому виду\\
+$\boxed{\Leftarrow}$  Система раскручивается и находятся все значения.\\
+Если в процессе $\boxed{\Rightarrow}$ появляются строки $0=b_i (b_i\neq 0)$, то СЛУ несовместна.\\
+Если в процессе $\boxed{\Rightarrow}$ получается система, число уравнений в которой \textit{меньше} числа неизвестных, то СЛУ совместна и неопределена\\
+Если в процессе $\boxed{\Rightarrow}$ получается система, число уравнений в которой \textit{равно} числу неизвестных, то СЛУ совместна и определена\\
+\section{Теорема Кронекера–Капелли. Следствия из нее. Правило решения СЛАУ.}
+СЛУ совместна $\Leftrightarrow$ $rang A = rang A|B$\\
+\subsection*{Следствия:}
+\begin{enumerate}
+	\item Если $rang A$ = числу неизвестных, то $\exists!$ решение.
+	\item Если $rang A$ < числа неизвестных, то $\exists \infty$ решений.
+\end{enumerate}
+\section{Однородные системы линейных уравнений. Теорема о существовании ненулевых решений системы линейных однородных уравнений.}
+Однородная система линейных уравнений $\Leftrightarrow B=O$
+\begin{enumerate}
+	\item  Если $rang A = n$, то нулевое -- единственное решение\\
+	($r<n$ -- решения, отличные от 0)
+	\item СЛОУ имеет 1 решение $\neq0 \Leftrightarrow \Delta = 0$
+	\item Если число уравнений < числа неизвестных, то $\exists$ решения $\neq 0$.
+\end{enumerate} 
+\section{Свойства решений однородной системы линейных уравнений.}
+\begin{enumerate}
+	\item Если строка $e_i = \left(b_{i1}, b_{i2}\dots\right)$ -- решение СЛОУ, то $\lambda e_i$ -- тоже решение.
+	\item Если $e_1$ и $e_2$ -- решения СЛОУ, то $\left(e_1 + e_2\right)$ -- тоже решение.
+	$$\sum a_{ij}(b_j+c_j)=\sum a_{ij}b_{j}+\sum a_{ij}c_j=0$$
+\end{enumerate}
+\section{Фундаментальная система решений. Теорема о фундаментальной системе решений.}
+Это всякая максимальная линейно-независимая система решений $e_1, e_2, e_3,\dots$ СЛОУ (если каждое решение этой СЛУ явлвяется линейной комбинацией решений $e_1, e_2, e_3, \dots$)
+\subsection*{Теорема о фундаментальной системе решений.}
+Если $rang A < $ числа неизвестных, то всякая другая система решений этой СЛОУ состоит из $n-rang A$ решений.
+\section{Теорема о связи решений однородной и неоднородной систем.}
+Общее решение $S$ СЛУ с $n$ неизвестных равно сумме общего решения соответствующей ей СЛОУ и произвольного частного решения первоначальной системы
+\section{Проекция вектора на ось и ее свойства.}
+Проекция $\overline{AB}$ на $l$ -- это $\left|\overline{A_1B_1}\right|$, взятая с $+$, если $\varphi < 90^\circ$, иначе с $-$.\\
+Точки $A_1$ и $B_1$ - проекции точек $A$ и $B$ на $l$.\\
+$$\text{пр}_l \overline{AB}=\left(\frac{\overline{a}\cdot\overline{b}}{\left|\overline{a}\right|}\right)$$
+\subsection*{Свойства проекции}
+\begin{enumerate}
+	\item $\text{пр}_l \overline{a}=\left|\overline{a}\right|\cos \varphi$
+	\item Постоянный множитель можно вынести за знак проекции  $$\text{пр}_l \lambda\overline{a}=\lambda\text{пр}_l \overline{a}$$
+	\item Проекция суммы весторов равна сумме проекций
+	$$\text{пр}_l \left(\overline{a}+\overline{b}\right)=\text{пр}_l\overline{a}+\text{пр}_l\overline{b}$$
+\end{enumerate}
+\section{Линейная зависимость и независимость векторов и ее свойства.}
+$\overline{a_1}, \overline{a_2}, \dots, \overline{a_n}$ -- \textbf{\textit{линейно-зависимы}}, если $\exists A_1, A_2, \dots, A_n$, такие что:\\
+$$A_1\overline{a_1}+A_2\overline{a_2}+\dots+A_n\overline{a_n} = 0$$
+и \textbf{\textit{линейно-независимы}} если $A_i = 0, i=1,2,\dots,n$\\
+$A_1\overline{a_1}+A_2\overline{a_2}+\dots+A_n\overline{a_n}$ -- \textbf{\textit{линейная комбинация}} векторов.\\
+Векторы линейно-зависимы $\Leftrightarrow$ один из векторов -- линейная комбинация остальных.\\
+\subsection*{Свойства ЛЗ и ЛНЗ}
+\begin{enumerate}
+	\item Всякие 3 вектора на плоскости линейно-зависимы.
+	\item Если векторов на плоскости больше 3, то они линейно-зависимы.
+	\item $\overline{a}$ и $\overline{b}$ -- линейно-зависимы $\Leftrightarrow$ $\overline{a}$ и $\overline{b}$ -- коллинеарны.
+	\item 4 вектора в пространстве линейно-зависимы.
+	\item Если векторов в пространстве больше 4, то они линейно-зависимы.
+	\item $\overline{a}, \overline{b}, \overline{c}$ -- линейно-зависимы $\Leftrightarrow \overline{a}, \overline{b}, \overline{c}$ -- коллинеарны в пространстве.
+	\item $\overline{a}, \overline{b}, \overline{c}$ -- линейно-независимы  $\Leftrightarrow \overline{a}, \overline{b}, \overline{c}$ -- некомпланарны.
+\end{enumerate}
+\section{Базис, разложение вектора по базису. Условия коллинеарности векторов.}
+\textbf{\textit{Базис}} -- максимальная система линейно-независимых векторов.\\
+Линейная комбинация базисных векторов, равная заданному вектору, назыавется \textbf{\textit{разложением}} вектора по базису.
+\subsection*{Теорема о единственности разложения}
+Разложить $\overline{a}$ по базису возможно единственным способом.
+\subsection*{Условия колинеарности векторов}
+\begin{enumerate}
+	\item $\overline{a}$ и $\overline{b}$ коллинеарны, если  $\exists n\colon \overline{a} =n\overline{b}$
+	\item $\overline{a}$ и $\overline{b}$ коллинеарны, если отношения координат равны
+	\item $\overline{a}$ и $\overline{b}$ коллинеарны, если $\overline{a}\times\overline{b}=\overline{0}$
+\end{enumerate}
+\section{Скалярное произведение векторов. Свойства и вычисление. Условие ортогональности векторов.}
+Это число:
+\begin{multline}
+	\overline{a}\cdot\overline{b} = \left|\overline{a}\right|\cdot\left|\overline{b}\right|\cdot\cos \varphi\\
+	\overline{a}\cdot\overline{b} = \left|\overline{b}\right|\cdot \text{пр}_{\overline{b}}\overline{a}=\left|\overline{a}\right|\cdot \text{пр}_{\overline{a}}\overline{b}\\
+\end{multline}
+\subsection*{Свойства скалярного произведения}
+\begin{enumerate}
+	\item $\overline{a}\cdot\overline{b} = \overline{b}\cdot\overline{a}$
+	\item $\lambda \left(\overline{a}\cdot\overline{b}\right)=\left(\lambda \overline{a}\right)\cdot\overline{b}$
+	\item $\overline{a} \left(\overline{b}+\overline{c}\right)=\overline{a}\cdot\overline{b}+\overline{a}\cdot\overline{c}$
+	\item $\overline{a}^2=\left|\overline{a}\right|^2$
+\end{enumerate}
+\subsection*{Условие ортогональности векторов.}
+Два ненулевых вектора ортогональны тогда и только тогда, когда их скалярное произведение равно 0.
+$$\overline{a}\perp\overline{b}\Leftrightarrow\overline{a}\cdot\overline{b}=0$$
+\section{Векторное произведение векторов. Свойства и вычисление. Третье условие коллинеарности векторов.}
+$\overline{a}\times\overline{b}=\overline{c}$
+\begin{enumerate}
+	\item $\overline{c}\perp\overline{a}$ и $\overline{c}\perp\overline{b}$
+	\item $\left|\overline{c}\right|=S_\square$
+	\item Векторы $\overline{a}, \overline{b}, \overline{c}$ образуют правую тройку векторов (если смотреть с конца $\overline{c}$, то поворот от $\overline{a}$ к $\overline{b}$ будет против часовой стрелки.)
+\end{enumerate}
+\subsection*{Свойства векторного произведения}
+\begin{enumerate}
+	\item При перестановке меняет знак:
+	$$\overline{a}\times\overline{b}=-\overline{b}\times\overline{a}$$
+	\item $\lambda \left(\overline{a}\times\overline{b}\right)=\left(\lambda \overline{a}\right)\times\overline{b}$
+	\item $\overline{a} \times \left(\overline{b}+\overline{c}\right)=\overline{a}\times \overline{b}+\overline{a}\times \overline{c}$
+\end{enumerate}
+\section{Смешанное произведение векторов. Свойства и вычисление. Геометрический смысл смешанного произведения. Условие компланарности векторов.}
+$\left(\overline{a}\times\overline{b}\right)\cdot\overline{c}$ -- число
+\begin{equation*}
+	\left(\overline{a}\times\overline{b}\right)\cdot\overline{c} = \left|\begin{matrix}
+		a_x&a_y&a_z\\
+		b_x&b_y&b_z\\
+		c_x&c_y&c_z\\
+	\end{matrix}\right|
+\end{equation*}
+\subsection*{Свойства смешанного произведения}
+\begin{enumerate}
+	\item $\left(\overline{a}\times\overline{b}\right)\cdot\overline{c}=\left(\overline{b}\times\overline{c}\right)\cdot\overline{a}=\left(\overline{c}\times\overline{a}\right)\cdot\overline{b}$
+	\item $-\left(\overline{a}\times\overline{b}\right)\cdot\overline{c}=-\left(\overline{b}\times\overline{c}\right)\cdot\overline{a}=-\left(\overline{c}\times\overline{a}\right)\cdot\overline{b}$
+\end{enumerate}
+\subsection*{Геометрический смысл смешанного произведения}
+Смешанное произведение трех векторов с точностью до знака равно объему параллелепипеда, построенного на этих векторах, как на ребрах
+$$\left(\overline{a}\times\overline{b}\right)\cdot\overline{c}=\left|\overline{a}\times\overline{b}\right|\cdot\left|\overline{c}\right|\cdot \cos\varphi=\pm V$$
+\begin{tikzpicture}
+	\draw[line width=2pt,blue,-stealth](0,0)--(3,0) node[anchor=south west]{$\boldsymbol{\overline{a}}$};
+	\draw[line width=2pt,red,-stealth](0,0)--(1, 3) node[anchor=north east]{$\boldsymbol{\overline{b}}$};
+	\draw[line width=2pt,green,-stealth](0,0)--(1, -2) node[anchor=north east]{$\boldsymbol{\overline{b}}$};
+	\draw[thin,blue,-stealth](1,3)--(4,3);
+	\draw[thin,blue,-stealth](1,-2)--(4,-2);
+	\draw[thin,blue,-stealth](2,1)--(5,1);
+	\draw[thin,red,-stealth](4,-2)--(5,1);
+	\draw[thin,red,-stealth](3,0)--(4,3);
+	\draw[thin,red,-stealth](1,-2)--(2,1);
+	\draw[thin,green,-stealth](1,3)--(2,1);
+	\draw[thin,green,-stealth](3,0)--(4,-2);
+	\draw[thin,green,-stealth](4,3)--(5,1);
+\end{tikzpicture}
+\subsection*{Условие компланарности векторов}
+Для того, чтобы 3 вектора $\overline{a}, \overline{b}, \overline{c}$ были компланарными, необходимо и достаточно, чтобы их сммешанное произведение было равно нулю.
+$$\overline{a}, \overline{b}, \overline{c} \text{-- компланарны}\Leftrightarrow \left(\overline{a}\times\overline{b}\right)\cdot\overline{c}=0$$
+\textit{Доказательство:}\\
+$\boxed{\Leftarrow } \overline{a}, \overline{b},\overline{c}$ -- компланарны.
+\begin{multline*}
+	\overline{a}\times\overline{b}\perp \overline{a}, \overline{a}\times\overline{b}\perp \overline{b}\Rightarrow \overline{a}\times\overline{b}\perp \overline{c}\\
+	\Downarrow\\
+	\left(\overline{a}\times\overline{b}\right)\cdot\overline{c}=0 \text{ (на основании условий ортогональности)}\\
+\end{multline*}
+$\boxed{\Rightarrow } \overline{a}\overline{b}\overline{c}=0$\\
+Пусть $\overline{a}, \overline{b}, \overline{c} $ -- некомпланарны, $\Rightarrow V = \left|\left(\overline{a}\times\overline{b}\right)\cdot\overline{c}\right|=0$ -- противоречие $\Rightarrow \overline{a}, \overline{b}, \overline{c}$ -- компланарны.\\
+$\blacksquare $\\
+\section{Преобразования систем координат: параллельный перенос и поворот осей координат.}
+\section{Уравнение прямой, проходящей через заданную точку перпендикулярно заданному вектору. Общее уравнение прямой и его исследование.}
+\section{Векторное уравнение прямой на плоскости, параметрическое уравнение прямой. Нормальное уравнение прямой.}
+\section{Каноническое уравнение прямой на плоскости. Уравнение прямой, проходящей через две заданные точки. Уравнение прямой в отрезках.}
+\section{Уравнение прямой, проходящей через заданную точку в заданном направлении. Уравнение прямой линии с заданным угловым коэффициентом.}
+\section{Угол между двумя прямыми. Условие параллельности и перпендикулярности прямых на плоскости.}
+\section{Расстояние от точки до прямой. Деление отрезка в заданном соотношении.}
+\section{Общее уравнение плоскости и его частные случаи. Уравнение плоскости, проходящей через заданную точку перпендикулярно заданному вектору.}
+\section{Уравнение плоскости, проходящей через три заданные точки. Уравнение плоскости в отрезках. Нормальное уравнение плоскости.}
+\section{Угол между двумя плоскостями. Условия параллельности и перпендикулярности двух плоскостей.}
+\section{Расстояние от точки до плоскости.}
+\section{Общие и векторное уравнения прямой в пространстве.}
+\section{Канонические и параметрические уравнения прямой в пространстве. Уравнения прямой проходящей через две точки.}
+\section{Угол между прямыми в пространстве. Условие параллельности и перпендикулярности прямых.}
+\section{Угол между прямой и плоскостью в пространстве. Условие параллельности и перпендикулярности прямой и плоскости.}
+\section{Кривые второго порядка. Окружность. Нормальное и общее уравнения окружности.}
+\section{Эллипс: определение, вывод канонического уравнения, свойства, эксцентриситет, директрисы.}
+\section{Парабола: определение, вывод канонического уравнения, свойства.}
+\section{Гипербола: определение, вывод канонического уравнения, свойства, эксцентриситет, директрисы. Уравнения асимптот гиперболы, построение гиперболы.}
+\section{Классификация кривых второго порядка по общему уравнения второй степени.}
+\section{Поверхности второго порядка. Цилиндрические поверхности.}
+\section{Поверхности вращения.}
+\section{Конические поверхности.}
+\section{Канонические уравнения поверхностей второго порядка (эллипсоид, однополостный гиперболоид, двуполостный гиперболоид, эллиптический параболоид, гиперболический параболоид, конус второго порядка).}
+\end{document}
